@@ -562,7 +562,7 @@ export function Header() {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`lg:hidden absolute top-[80px] left-0 w-full h-[calc(100vh-80px)] bg-white dark:bg-surface-dark overflow-y-auto transition-all duration-300 ease-in-out ${mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+          className={`lg:hidden fixed top-[80px] left-0 right-0 w-full h-[calc(100vh-80px)] bg-white dark:bg-surface-dark overflow-y-auto transition-all duration-300 ease-in-out ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
         >
           <div className="px-6 py-8 space-y-2">
