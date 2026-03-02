@@ -57,11 +57,24 @@ export function ProcessSection() {
                 scrollTrigger: { trigger: ".proc-track", start: "top 75%" }
             });
 
-            // Line animation
-            gsap.fromTo(".proc-line",
-                { scaleX: 0, transformOrigin: "left center" },
-                { scaleX: 1, duration: 1.2, ease: "power2.inOut", scrollTrigger: { trigger: ".proc-track", start: "top 75%" } }
-            );
+            const mm = gsap.matchMedia();
+
+            mm.add("(min-width: 768px)", () => {
+                // Line animation
+                gsap.fromTo(".proc-line",
+                    { scaleX: 0, transformOrigin: "left center" },
+                    { scaleX: 1, duration: 1.2, ease: "power2.inOut", scrollTrigger: { trigger: ".proc-track", start: "top 75%" } }
+                );
+            });
+
+            mm.add("(max-width: 767px)", () => {
+                const trackElem = document.querySelector('.proc-vertical-track');
+                const trackHeight = trackElem ? trackElem.clientHeight : 500;
+                gsap.fromTo(".proc-line-mobile-fill",
+                    { scaleY: 0, transformOrigin: "top center" },
+                    { scaleY: 1, ease: "none", scrollTrigger: { trigger: ".proc-track", start: "top 60%", end: () => `+=${trackHeight}`, scrub: 0.5 } }
+                );
+            });
         }, containerRef);
         return () => ctx.revert();
     }, []);
@@ -88,7 +101,12 @@ export function ProcessSection() {
 
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden md:block absolute top-[40px] left-[10%] right-[10%] h-[2px] bg-gray-200 z-0">
-                        <div className="proc-line h-full bg-zigron-red w-full" />
+                        <div className="proc-line h-full bg-zigron-red w-full origin-left" />
+                    </div>
+
+                    {/* Connecting Line (Mobile) */}
+                    <div className="proc-vertical-track md:hidden absolute top-[40px] bottom-[40px] left-1/2 -translate-x-1/2 w-[2px] bg-gray-200 z-0 overflow-hidden">
+                        <div className="proc-line-mobile-fill h-full bg-zigron-red w-full origin-top" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 relative z-10">

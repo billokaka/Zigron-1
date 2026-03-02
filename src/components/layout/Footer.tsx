@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Zap } from "lucide-react";
 
 const footerLinks = {
@@ -36,13 +37,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Logo Column */}
           <div className="col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-bold text-xl tracking-tight text-black dark:text-white">
-                ZIGRON
-              </span>
+            <Link href="/" className="flex items-center gap-2 mb-6 group">
+              <Image
+                src="/logo.svg"
+                alt="Zigron Logo"
+                width={120}
+                height={35}
+                className="w-28 md:w-[120px] h-auto grayscale dark:invert brightness-0 dark:brightness-100 dark:contrast-100 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
+              />
             </Link>
             <p className="text-xs text-gray-500 mb-4">
               Building Smart Solutions Of The Future.

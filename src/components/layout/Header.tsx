@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
@@ -451,12 +452,14 @@ export function Header() {
               className="flex-shrink-0 flex items-center gap-3 group"
               onClick={() => setActiveDropdown(null)}
             >
-              <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-white shadow-md group-hover:bg-primary-dark group-hover:shadow-lg transition-all transform group-hover:-translate-y-0.5">
-                <Zap className="w-5 h-5 fill-current" strokeWidth={2} />
-              </div>
-              <span className="text-2xl font-black tracking-tight text-gray-900 dark:text-white uppercase">
-                ZIGRON
-              </span>
+              <Image
+                src="/logo.svg"
+                alt="Zigron Logo"
+                width={140}
+                height={40}
+                className="w-28 md:w-[140px] h-auto drop-shadow-sm transiton-transform group-hover:scale-[1.02]"
+                priority
+              />
             </Link>
 
             {/* Desktop Nav Links */}
