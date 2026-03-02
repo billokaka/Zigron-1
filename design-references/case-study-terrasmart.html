@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zigron Case Study | TerraSmart Solar Optimization</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#B62427", // Zigron Red
+                        "primary-dark": "#8a1b1d", // Darker shade for hover
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#121212", // Deep black background
+                        "surface-light": "#F3F4F6", // Light Gray for cards
+                        "surface-dark": "#232020", // Brand Black for cards/sections
+                        "text-main-light": "#232020",
+                        "text-main-dark": "#E5E5E5",
+                        "text-muted-light": "#52525B",
+                        "text-muted-dark": "#A1A1AA",
+                        "accent-gray": "#D2D9D9", // Brand Light Gray
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                        body: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px", // Keeping it slightly sharp for engineering feel
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'slide': 'slide 2s infinite',
+                    },
+                    keyframes: {
+                        slide: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(200%)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        body { font-family: 'Poppins', sans-serif; }
+        .zigron-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: #B62427;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark antialiased transition-colors duration-300">
+<div class="bg-surface-dark text-white text-xs py-2 px-4 text-center tracking-wide hidden md:block">
+<span class="opacity-90">OEM Product Engineering • AI Systems • Engineering Design</span>
+</div>
+<nav class="sticky top-0 z-50 bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+<div class="zigron-box">
+<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-2xl font-bold tracking-tight text-black dark:text-white">ZIGRON</span>
+</div>
+<div class="hidden lg:flex space-x-8 items-center font-medium text-sm">
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition" href="#">Services</a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition" href="#">Solutions</a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition" href="#">Industries</a>
+<a class="text-primary font-semibold transition" href="#">Work</a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition" href="#">Company</a>
+</div>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition flex items-center gap-2" href="#">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                    Back to all work
+                </a>
+<button class="bg-primary hover:bg-primary-dark text-white text-sm font-semibold py-2.5 px-5 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                    Start a project
+                </button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 transition" onclick="document.documentElement.classList.toggle('dark')">
+<svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="flex items-center lg:hidden">
+<button class="text-gray-500 hover:text-gray-700 dark:text-gray-300">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative pt-12 pb-20 overflow-hidden bg-surface-light dark:bg-black">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-8 uppercase tracking-wider font-semibold">
+<a class="hover:text-primary transition" href="#">Work</a>
+<span class="text-gray-300">/</span>
+<a class="hover:text-primary transition" href="#">Energy</a>
+<span class="text-gray-300">/</span>
+<span class="text-primary">TerraSmart</span>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="text-left pt-4">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-black dark:text-white">
+                    TerraSmart Solar OEM Optimization
+                </h1>
+<p class="text-xl md:text-2xl font-light text-text-muted-light dark:text-text-muted-dark mb-8 leading-relaxed border-l-4 border-primary pl-6">
+                    Achieving a 30% increase in field installation efficiency through custom IoT hardware and automated tracking.
+                </p>
+<div class="flex flex-wrap gap-3 mb-10">
+<span class="inline-flex items-center px-3 py-1 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-bold uppercase tracking-wide">
+                        Renewable Energy
+                    </span>
+<span class="inline-flex items-center px-3 py-1 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-bold uppercase tracking-wide">
+                        IoT Engineering
+                    </span>
+<span class="inline-flex items-center px-3 py-1 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-bold uppercase tracking-wide">
+                        Cloud Analytics
+                    </span>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white text-base font-semibold py-3.5 px-8 rounded shadow-lg hover:bg-primary-dark transition flex items-center justify-center gap-2 group">
+                        Talk to us about a similar project
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="relative h-[500px] w-full bg-gray-100 dark:bg-surface-dark rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
+<img alt="Solar Panels Installation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFxP4LyvJAT9yT5pc9f_d268gtjP1_-5_ZrJqRS3oQvg1iNx1sWEcAkYSaWZG9FEVrqA4FSPls-rRMtKuueE_F5FECR-xgFB2S9S5VEHhHWvKVnV7vVEqO7rFT0FbI7iKGoWQCdwy504ytJ75DP-Zf1u5x5nDgAmDT4_lbFzXhIU5wvrYNPZaamUUJ3bmgD-vm7Cd1PaKP77sFF9y4jE3N42Kgg-NbGOdQC7OREwQ58_pZsE0e3gwUvx90PlZ2VEYYaiDsvCaYQnM"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+<div class="flex items-center gap-4 text-white">
+<div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/20">
+<span class="block text-2xl font-bold">5MW+</span>
+<span class="text-xs uppercase opacity-80">Site Capacity</span>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/20">
+<span class="block text-2xl font-bold">50k</span>
+<span class="text-xs uppercase opacity-80">Sensors Deployed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-3 gap-12 relative divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-700">
+<div class="md:pr-8">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h3 class="font-bold text-lg uppercase tracking-wide">The Challenge</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                    TerraSmart faced spiraling labor costs due to manual surveying and alignment of solar piles in difficult terrains. Existing GPS solutions were too slow and lacked the precision needed for automated workflows, causing installation bottlenecks.
+                </p>
+</div>
+<div class="md:px-8 pt-8 md:pt-0">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h3 class="font-bold text-lg uppercase tracking-wide">What We Built</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                    We engineered a ruggedized IoT sensor ecosystem capable of sub-centimeter accuracy. This system integrates directly with installation machinery, feeding real-time geospatial data to a cloud dashboard for automated alignment and tracking.
+                </p>
+</div>
+<div class="md:pl-8 pt-8 md:pt-0">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h3 class="font-bold text-lg uppercase tracking-wide">The Results</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                    The solution reduced survey time by 45% and improved overall installation speed by 30%. Manual errors were virtually eliminated, and project managers gained unprecedented real-time visibility into site progress from anywhere in the world.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-12 gap-12">
+<div class="lg:col-span-7">
+<h2 class="text-3xl font-bold mb-6 text-black dark:text-white">Context &amp; Complexity</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    Solar farms are often situated in hostile environments—remote deserts with extreme temperatures, dust storms, and zero cellular connectivity. Standard consumer-grade electronics fail within days. 
+                </p>
+<p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    The user base consisted of field technicians operating heavy machinery who needed a system that was "grab-and-go" simple. The interface had to be legible in bright sunlight and responsive despite high latency or intermittent connectivity.
+                </p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Furthermore, security was paramount. The system transmits proprietary geospatial data that constitutes the client's competitive advantage. Any data leak or system downtime would directly translate to millions in stalled construction costs.
+                </p>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border-l-4 border-primary">
+<h3 class="font-bold text-xl mb-6 text-black dark:text-white">Key Constraints</h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<svg class="w-6 h-6 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<strong class="block text-sm text-black dark:text-white">Extreme Environment</strong>
+<span class="text-sm text-gray-500">Operating range -20°C to +60°C, IP67 dust/water resistance required.</span>
+</div>
+</li>
+<li class="flex gap-4">
+<svg class="w-6 h-6 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<strong class="block text-sm text-black dark:text-white">Connectivity</strong>
+<span class="text-sm text-gray-500">No reliance on public cellular/WiFi. Must use localized mesh network.</span>
+</div>
+</li>
+<li class="flex gap-4">
+<svg class="w-6 h-6 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<strong class="block text-sm text-black dark:text-white">Precision Hardware</strong>
+<span class="text-sm text-gray-500">Hardware tolerances within 2mm for pile driving alignment.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white dark:bg-surface-dark border-y border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-black dark:text-white">The Solution Architecture</h2>
+<p class="mt-4 text-gray-500 max-w-2xl mx-auto">A fully integrated OEM ecosystem bridging rugged hardware, local edge computing, and cloud intelligence.</p>
+</div>
+<div class="relative h-80 w-full flex items-center justify-center bg-gray-50 dark:bg-black rounded-xl border border-gray-200 dark:border-gray-700 p-8 mb-16 shadow-inner overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<div class="w-96 h-96 border border-dashed border-gray-400 rounded-full animate-spin-slow"></div>
+</div>
+<div class="flex justify-between items-center relative z-10 w-full max-w-3xl">
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center border border-gray-200 dark:border-gray-600 relative z-20">
+<span class="absolute -top-2 -right-2 bg-green-500 w-3 h-3 rounded-full animate-pulse"></span>
+<svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="text-center">
+<span class="block text-sm font-bold text-black dark:text-white">Edge Devices</span>
+<span class="text-xs text-gray-500">RTK GPS &amp; Sensors</span>
+</div>
+</div>
+<div class="h-1 bg-gray-300 dark:bg-gray-600 flex-1 mx-4 relative overflow-hidden rounded">
+<div class="absolute inset-0 bg-primary/50 w-1/2 h-full animate-[slide_2s_infinite]"></div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center border border-gray-200 dark:border-gray-600 z-20">
+<svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="text-center">
+<span class="block text-sm font-bold text-black dark:text-white">Local Gateway</span>
+<span class="text-xs text-gray-500">LoRaWAN Mesh</span>
+</div>
+</div>
+<div class="h-1 bg-gray-300 dark:bg-gray-600 flex-1 mx-4 relative overflow-hidden rounded">
+<div class="absolute inset-0 bg-blue-500/30 w-1/2 h-full animate-[slide_2s_infinite] delay-75"></div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 bg-primary text-white rounded-xl shadow-lg flex items-center justify-center z-20">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="text-center">
+<span class="block text-sm font-bold text-black dark:text-white">Cloud Platform</span>
+<span class="text-xs text-gray-500">AWS IoT Core</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h3 class="text-xl font-bold mb-6 text-black dark:text-white">Core Solution Features</h3>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div>
+<strong class="block text-black dark:text-white text-sm">Offline-First Architecture</strong>
+<p class="text-xs text-gray-500">Local data caching ensures zero data loss during connectivity blackouts.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div>
+<strong class="block text-black dark:text-white text-sm">RTK Positioning Engine</strong>
+<p class="text-xs text-gray-500">Custom algorithms delivering 1-2cm precision for pile placement.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div>
+<strong class="block text-black dark:text-white text-sm">Automated QA Reporting</strong>
+<p class="text-xs text-gray-500">Instant generation of as-built reports replacing manual data entry.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div>
+<strong class="block text-black dark:text-white text-sm">Adaptive Power Management</strong>
+<p class="text-xs text-gray-500">Solar-assisted battery life extension for 24/7 operation.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6 text-black dark:text-white">Engineering Approach</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                    We moved beyond standard off-the-shelf components, designing custom PCBs to handle the vibration and thermal loads of the construction machinery. The firmware was written in bare-metal C++ for maximum efficiency, while the cloud backend utilized serverless AWS architecture to scale automatically with the number of active construction sites.
+                </p>
+<div class="p-5 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-3">Tech Stack</span>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-600 px-2 py-1 rounded text-xs font-mono text-gray-700 dark:text-gray-300">C++</span>
+<span class="bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-600 px-2 py-1 rounded text-xs font-mono text-gray-700 dark:text-gray-300">AWS IoT Core</span>
+<span class="bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-600 px-2 py-1 rounded text-xs font-mono text-gray-700 dark:text-gray-300">LoRaWAN</span>
+<span class="bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-600 px-2 py-1 rounded text-xs font-mono text-gray-700 dark:text-gray-300">React Native</span>
+<span class="bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-600 px-2 py-1 rounded text-xs font-mono text-gray-700 dark:text-gray-300">DynamoDB</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-2xl font-bold mb-10 text-black dark:text-white">Implementation Timeline</h2>
+<div class="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 space-y-12">
+<div class="relative pl-10">
+<span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-background-dark shadow-sm"></span>
+<h4 class="font-bold text-lg text-black dark:text-white">Phase 1: Discovery &amp; Protoyping</h4>
+<p class="text-sm text-gray-500 mb-1">Duration: 4 Weeks</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm">Site analysis, requirements gathering, and rapid 3D printing of enclosure concepts. Initial LoRa range testing.</p>
+</div>
+<div class="relative pl-10">
+<span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 border-4 border-white dark:border-background-dark"></span>
+<h4 class="font-bold text-lg text-black dark:text-white">Phase 2: Hardware Engineering &amp; Firmware</h4>
+<p class="text-sm text-gray-500 mb-1">Duration: 12 Weeks</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm">Custom PCB design, fabrication, and rigorous thermal testing. Firmware development for RTK positioning.</p>
+</div>
+<div class="relative pl-10">
+<span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 border-4 border-white dark:border-background-dark"></span>
+<h4 class="font-bold text-lg text-black dark:text-white">Phase 3: Field Validation</h4>
+<p class="text-sm text-gray-500 mb-1">Duration: 6 Weeks</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm">Deployment of 50 pilot units at a live site in Nevada. QA loops to refine UI based on technician feedback.</p>
+</div>
+<div class="relative pl-10">
+<span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 border-4 border-white dark:border-background-dark"></span>
+<h4 class="font-bold text-lg text-black dark:text-white">Phase 4: Full Scale Rollout</h4>
+<p class="text-sm text-gray-500 mb-1">Ongoing</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm">Production manufacturing and deployment to 12 global sites.</p>
+</div>
+</div>
+<div class="mt-16 bg-gray-900 dark:bg-black p-8 rounded-lg text-white flex flex-col md:flex-row items-center gap-6 border border-gray-800 shadow-xl">
+<svg class="w-12 h-12 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div>
+<h4 class="font-bold text-lg">Security &amp; QA Assurance</h4>
+<p class="text-gray-400 text-sm mt-1">Zigron implemented device-level X.509 certificates for authentication and AES-256 encryption for all data in transit. The system underwent third-party penetration testing before Phase 3 release.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-surface-light dark:bg-surface-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold mb-12 text-center text-black dark:text-white">Measurable Impact</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-300 dark:divide-gray-700">
+<div class="px-4 py-4 md:py-0">
+<p class="text-5xl font-extrabold text-black dark:text-white mb-2">30%</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Improvement in Installation Speed</p>
+</div>
+<div class="px-4 py-4 md:py-0">
+<p class="text-5xl font-extrabold text-black dark:text-white mb-2">45%</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Reduction in Surveying Labor</p>
+</div>
+<div class="px-4 py-4 md:py-0">
+<p class="text-5xl font-extrabold text-black dark:text-white mb-2">&lt;12mo</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Return on Investment (ROI)</p>
+</div>
+<div class="px-4 py-4 md:py-0">
+<p class="text-5xl font-extrabold text-black dark:text-white mb-2">99.9%</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 font-medium">System Uptime in Extreme Heat</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<span class="text-primary font-bold uppercase tracking-widest text-xs mb-4 block">Looking Ahead</span>
+<h2 class="text-3xl font-bold text-black dark:text-white mb-6">Scalability &amp; The Future</h2>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+            The platform's success has opened the door for fully autonomous installation robots. The current IoT infrastructure serves as the data backbone, enabling future integration of AI-driven rovers that can navigate the site using the existing precision mesh network. Zigron is currently prototyping the next generation of these autonomous agents.
+        </p>
+</div>
+</section>
+<section class="py-20 bg-gray-50 dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="text-xl font-bold mb-8 text-black dark:text-white">Related Case Studies &amp; Services</h3>
+<div class="grid md:grid-cols-3 gap-8">
+<a class="group block bg-white dark:bg-background-dark rounded-lg overflow-hidden shadow hover:shadow-xl transition duration-300" href="#">
+<div class="h-40 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+<img alt="Smart Home" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChO7UnQXffsjMvnP7gYJ7ADAmWDnksq9kVx3Js-O8HvxO85SA7rpZtFWhDx1c2-kDDnNJQG_bX5H8sP1jxVpSE74SvbKK6PdCXTf0_WTCLpudIr8RDf81pwAjUwh7K6ivHeUHUympUDoZZ5J9CneA1uQrlZisZfZ3Y5rWALFzwSryT4_TAm_mMyLladIAvB74F1gdFwacsYli22e7sFpek86rARkJn_np55PcL9kw4fNlNLuBHc9zVBNvfTuXUOAzZc-PWdvSgVaM"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+</div>
+<div class="p-5">
+<span class="text-xs font-bold text-primary uppercase mb-2 block">IoT Platform</span>
+<h4 class="font-bold text-base text-black dark:text-white mb-1">Abode Smart Home Security</h4>
+<p class="text-xs text-gray-500">Scaling consumer IoT to millions of users.</p>
+</div>
+</a>
+<a class="group block bg-white dark:bg-background-dark rounded-lg overflow-hidden shadow hover:shadow-xl transition duration-300" href="#">
+<div class="h-40 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+<img alt="Data Analytics" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlyxDAKz3Gi7EaPPtlL9m5qLDxn1tyDfrU_SfIXJ8GQmRUk4XXHdNJrom4bXAjKV5ECAdLdydR2YKQxqJMIku3KT9TKJRQ3vQpFso2tfowdet_PKuCrie1MeOqbijUBQQ5wjduLtvmBlA--QisgpWrQTiVm2IYSW9zr8Rmj23bjQM8wSRm61dwXAXlONSlvzfIO429U5nUY-oXZ-COjJuQ1cecaCCnDXRxtHiq0OUr5QOlcztIIYQOpxviuRGbO9a30SgUt2YWMO4"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition"></div>
+</div>
+<div class="p-5">
+<span class="text-xs font-bold text-primary uppercase mb-2 block">AI Systems</span>
+<h4 class="font-bold text-base text-black dark:text-white mb-1">TerraTrak AI Solar Tracking</h4>
+<p class="text-xs text-gray-500">Machine learning for energy maximization.</p>
+</div>
+</a>
+<div class="flex flex-col gap-4">
+<a class="flex items-center justify-between p-5 bg-white dark:bg-background-dark rounded shadow hover:border-l-4 hover:border-primary transition-all group" href="#">
+<div>
+<span class="block font-bold text-black dark:text-white text-sm">Explore IoT Services</span>
+<span class="text-xs text-gray-500">End-to-end firmware &amp; cloud</span>
+</div>
+<svg class="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<a class="flex items-center justify-between p-5 bg-white dark:bg-background-dark rounded shadow hover:border-l-4 hover:border-primary transition-all group" href="#">
+<div>
+<span class="block font-bold text-black dark:text-white text-sm">Energy Industry Solutions</span>
+<span class="text-xs text-gray-500">Tailored for Oil, Gas &amp; Solar</span>
+</div>
+<svg class="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-light dark:bg-surface-dark relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-gray-200 dark:bg-gray-800 rounded-full opacity-20 blur-3xl"></div>
+<div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+<h2 class="text-4xl font-bold mb-4 text-black dark:text-white">Ready to Engineer Your Success?</h2>
+<p class="text-gray-500 mb-10">Whether you need a similar solution or a completely custom build, our team is ready to scope your challenge.</p>
+<form class="bg-white dark:bg-background-dark p-8 rounded-lg shadow-xl max-w-2xl mx-auto text-left border border-gray-100 dark:border-gray-800">
+<h3 class="font-bold text-lg mb-6 text-black dark:text-white">Discuss this project</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div>
+<label class="block text-xs font-semibold text-gray-500 mb-1">Name</label>
+<input class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded p-2 text-sm focus:ring-primary focus:border-primary outline-none text-black dark:text-white placeholder-gray-400" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-gray-500 mb-1">Company Email</label>
+<input class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded p-2 text-sm focus:ring-primary focus:border-primary outline-none text-black dark:text-white placeholder-gray-400" type="email"/>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-xs font-semibold text-gray-500 mb-1">How can we help?</label>
+<textarea class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded p-2 text-sm focus:ring-primary focus:border-primary outline-none text-black dark:text-white placeholder-gray-400" placeholder="I'm interested in a solution similar to TerraSmart..." rows="3"></textarea>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-center">
+<button class="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded transition shadow-lg" type="button">Request Consultation</button>
+<span class="text-xs text-gray-400">or <a class="underline hover:text-primary transition" href="#">schedule a 15-min intro call</a></span>
+</div>
+</form>
+</div>
+</section>
+<footer class="bg-background-light dark:bg-background-dark pt-16 border-t border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-6 h-6 bg-primary rounded-sm flex items-center justify-center">
+<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="font-bold text-xl tracking-tight text-black dark:text-white">ZIGRON</span>
+</div>
+<p class="text-xs text-gray-500 mb-4">Building Smart Solutions Of The Future.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+</svg>
+</a>
+<a class="text-gray-400 hover:text-primary transition" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 text-black dark:text-white">Solutions</h4>
+<ul class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary transition" href="#">Smart Energy</a></li>
+<li><a class="hover:text-primary transition" href="#">Predictive Maintenance</a></li>
+<li><a class="hover:text-primary transition" href="#">Fleet &amp; Logistics</a></li>
+<li><a class="hover:text-primary transition" href="#">Smart Home</a></li>
+<li><a class="hover:text-primary transition" href="#">Medical IoT</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 text-black dark:text-white">Services</h4>
+<ul class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary transition" href="#">Firmware Development</a></li>
+<li><a class="hover:text-primary transition" href="#">Cloud Engineering</a></li>
+<li><a class="hover:text-primary transition" href="#">AI &amp; Data Systems</a></li>
+<li><a class="hover:text-primary transition" href="#">Mechanical Design</a></li>
+<li><a class="hover:text-primary transition" href="#">QA &amp; Testing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 text-black dark:text-white">Industries</h4>
+<ul class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary transition" href="#">Solar &amp; Renewables</a></li>
+<li><a class="hover:text-primary transition" href="#">Oil &amp; Gas</a></li>
+<li><a class="hover:text-primary transition" href="#">Consumer Electronics</a></li>
+<li><a class="hover:text-primary transition" href="#">Healthcare</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm mb-4 text-black dark:text-white">Company</h4>
+<ul class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary transition" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition" href="#">Contact</a></li>
+<li><a class="hover:text-primary transition" href="#">Blog</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 py-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+<p>© 2023 Zigron Inc. All rights reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-black dark:hover:text-white transition" href="#">Privacy Policy</a>
+<a class="hover:text-black dark:hover:text-white transition" href="#">Terms of Service</a>
+<a class="hover:text-black dark:hover:text-white transition" href="#">Security</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

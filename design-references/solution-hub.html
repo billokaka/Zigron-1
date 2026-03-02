@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zigron - Solutions Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d71d27",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211112",
+                        "zigron-black": "#171112",
+                        "zigron-gray": "#333333"
+                    },
+                    fontFamily: {
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-zigron-black dark:text-white antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden font-sans">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-[#1a1a1a]/90 backdrop-blur-md px-6 md:px-10 py-4 shadow-sm">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-primary group" href="#">
+<div class="size-8 flex items-center justify-center">
+<svg class="w-8 h-8 fill-primary" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 11l-2.5-1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"></path></svg>
+</div>
+<h2 class="text-zigron-black dark:text-white text-2xl font-bold leading-tight tracking-tight group-hover:text-primary transition-colors">Zigron</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-zigron-black dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Solutions</a>
+<a class="text-zigron-black dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Industries</a>
+<a class="text-zigron-black dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Services</a>
+<a class="text-zigron-black dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Company</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 p-2.5 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-red-700 transition-all text-white text-sm font-bold shadow-md hover:shadow-lg">
+<span class="truncate">Talk to us</span>
+</button>
+</div>
+</header>
+<section class="relative bg-white dark:bg-background-dark py-16 md:py-24 lg:py-32 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-30 pointer-events-none">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-red-50 dark:bg-red-900/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-gray-50 dark:bg-gray-800/20 rounded-full blur-3xl"></div>
+</div>
+<div class="layout-container px-6 md:px-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center relative z-10">
+<div class="flex-1 flex flex-col gap-6 text-left max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 w-fit">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Enterprise IoT &amp; AI</span>
+</div>
+<h1 class="text-zigron-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">
+                    Solutions Built for <br/> <span class="text-primary relative inline-block">Real-World Operations
+                        <svg class="absolute w-full h-3 -bottom-1 left-0 text-red-200 dark:text-red-900 -z-10" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 2.99991 74.5298 -2.48624 198.002 2.49997" stroke="currentColor" stroke-width="3"></path></svg>
+</span>
+</h1>
+<h2 class="text-gray-600 dark:text-gray-300 text-lg md:text-xl font-normal leading-relaxed max-w-xl">
+                    Pre-architected solution frameworks delivered as OEM-grade implementations. Accelerate your roadmap with proven modules.
+                </h2>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-500/20 hover:shadow-red-500/40" onclick="document.getElementById('solutions').scrollIntoView({behavior: 'smooth'})">
+                        Explore solutions
+                    </button>
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-white dark:bg-transparent text-zigron-black dark:text-white border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 text-base font-bold transition-all">
+                        Talk to an engineer
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full relative group">
+<div class="absolute -inset-1 bg-gradient-to-tr from-primary/20 to-gray-200/20 rounded-2xl blur-lg transition-all duration-500 group-hover:blur-xl"></div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl bg-gray-900 border border-gray-100 dark:border-gray-800">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Abstract data visualization dashboard showing analytics graphs on a dark screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcxIAkrAujGCrcOnYUEn37cHi5P2Wudi2_ZikcQt3SnjLc2uqaoQhRxkDw_YMWTivws1sjrILtFrVwm93qXuQVwFDY6M5OjRTrDeOhH8oTl22pcQQV2LfSerHeT6d3j-Bibz4mKEdmahYMsnThdy1nDdSzM11PJWzzv2OXlOSr2e2ruhfZAZMbopnveJ58llv9t4Dc8P2xW46hfKgqr1enctD10l-eSDLRUPY4l8dPb7Atbwe-EQfAcc6jMoGLRSX2MoB-U5M-eBg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 flex gap-4">
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg flex-1 hover:bg-white/15 transition-colors">
+<p class="text-xs text-gray-300 mb-1 uppercase tracking-wider font-semibold">System Status</p>
+<div class="flex items-center gap-2">
+<span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
+<p class="text-white font-bold">Operational</p>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg flex-1 hover:bg-white/15 transition-colors">
+<p class="text-xs text-gray-300 mb-1 uppercase tracking-wider font-semibold">Efficiency Gain</p>
+<div class="flex items-center gap-2">
+<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<p class="text-white font-bold text-xl">+24.5%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-[#f8f6f6] dark:bg-[#151515] border-y border-gray-200 dark:border-gray-800" id="solutions">
+<div class="layout-container px-6 md:px-10 max-w-7xl mx-auto flex flex-col gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<h3 class="text-3xl font-bold text-zigron-black dark:text-white">Our Solution Frameworks</h3>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar items-center">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-zigron-black text-white px-6 shadow-sm hover:shadow-md transition-all">
+<span class="text-sm font-semibold">All Solutions</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:text-primary px-6 transition-colors group">
+<span class="text-sm font-semibold text-gray-600 dark:text-gray-300 group-hover:text-primary">Energy</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:text-primary px-6 transition-colors group">
+<span class="text-sm font-semibold text-gray-600 dark:text-gray-300 group-hover:text-primary">Reliability / Maintenance</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:text-primary px-6 transition-colors group">
+<span class="text-sm font-semibold text-gray-600 dark:text-gray-300 group-hover:text-primary">Mobility / Fleet</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:text-primary px-6 transition-colors group">
+<span class="text-sm font-semibold text-gray-600 dark:text-gray-300 group-hover:text-primary">Connected Home</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:text-primary px-6 transition-colors group">
+<span class="text-sm font-semibold text-gray-600 dark:text-gray-300 group-hover:text-primary">Healthcare</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="flex flex-col bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+<div class="h-52 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Solar panels array in a field under clear blue sky" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKZ9jshNhHu9-103zD_7vVm1uVO1rWARaRt_HTxs1o2dMLFFk2CTWF4Kb9fyy0E_KmuEEWOvlSowNV74YGcnGRBnBEWVKzDqMACeqJ8kXFjuWO_nGNGHDMt5t4KHDKTT5A2z0sVZt205aAjpjAZqFzQqxJHbTjUMpKfyUkKff5iZotpmtMpq25lKwzRXpclhOt9_8IN51ZAsc4VONOgERooTUm3yNmCYnu8-cSGipxFfqWk2HACA-vY7ZQpZsLRMLuV1dvIilKppc');"></div>
+<div class="absolute top-4 right-4 bg-white/95 dark:bg-gray-900/95 backdrop-blur px-3 py-1.5 rounded-md text-[10px] font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-700 uppercase tracking-wide">
+                            Ready to deploy
+                        </div>
+</div>
+<div class="p-7 flex flex-col flex-1 gap-5">
+<div>
+<h4 class="text-xl font-bold text-zigron-black dark:text-white mb-2 group-hover:text-primary transition-colors">Smart Energy &amp; Solar</h4>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Best for: Solar Farms &amp; Energy Grids</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Real-time consumption monitoring</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Grid load balancing algorithms</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Predictive outage alerts</span>
+</div>
+</div>
+<div class="mt-auto pt-5 border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-5">
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">15%</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Avg. Savings</p>
+</div>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">99.9%</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Uptime</p>
+</div>
+</div>
+<div class="flex gap-2 mb-5 flex-wrap">
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">IoT Core</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">TimescaleDB</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">Python</span>
+</div>
+<a class="flex w-full items-center justify-center rounded-lg h-10 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-sm group-hover:shadow-md" href="#">
+                                View Solution
+                            </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+<div class="h-52 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Industrial robotic arm in a manufacturing plant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw87VlEJ1jI8GV224bdtXSPB2tkl9dF0HSPXhi7p0uV10tYSBpZXJkYkDBem_OJoTwBJpSKq8VbV4MP1runP2NiTsxZo0effc0za6UFLtClzuztDLuR3tVvY0DgKQ2bbQDced6aNe0UFQsdMtYvdZhu_CcF2-wq87BWZ_s5naDV4CTJwGszR86PFBZwD0EKzTG0iXOEiuqjZSFCVnfQzBxLfZD2FIFIYe7BEJfAdLVr_wNSFWCwFZ6_JWMppqmQ_51-vy8EOpPNjw');"></div>
+</div>
+<div class="p-7 flex flex-col flex-1 gap-5">
+<div>
+<h4 class="text-xl font-bold text-zigron-black dark:text-white mb-2 group-hover:text-primary transition-colors">Predictive Maintenance</h4>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Best for: Industrial Manufacturing</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Vibration &amp; heat anomaly detection</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Equipment longevity modeling</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Automated service ticketing</span>
+</div>
+</div>
+<div class="mt-auto pt-5 border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-5">
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">40%</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Less Downtime</p>
+</div>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">3x</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">ROI Year 1</p>
+</div>
+</div>
+<div class="flex gap-2 mb-5 flex-wrap">
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">TensorFlow</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">MQTT</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">Edge AI</span>
+</div>
+<a class="flex w-full items-center justify-center rounded-lg h-10 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-sm group-hover:shadow-md" href="#">
+                                View Solution
+                            </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+<div class="h-52 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Logistics truck moving on a highway at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZa4zDcrjY0CQxbJTAoDfjnhIc-9a9rwpSJVxRgBMz9iBvt3vLSgH4uwpWtmjidI230xZHTRKx1q874XqpaPZzZFmnblN54K9biD4grF1A-m_dQjkaAHtHYFNcHYyQE9VJ47zQ8kwUHasigGgSpmTICU2f-9BQxOythBLp2bhwmnbb7aeVsfWbUL0WR7d7TO5FJsEx_A4mr1tZHPyjta_ktO__1Kg5iphK9BtnXWuHX-la9R1N9FZkjfAPMFJ5vevUVJAwZT0t4ok');"></div>
+</div>
+<div class="p-7 flex flex-col flex-1 gap-5">
+<div>
+<h4 class="text-xl font-bold text-zigron-black dark:text-white mb-2 group-hover:text-primary transition-colors">Fleet &amp; Logistics</h4>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Best for: Supply Chain &amp; Transport</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Dynamic route optimization</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Fuel consumption analytics</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Driver behavior scoring</span>
+</div>
+</div>
+<div class="mt-auto pt-5 border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-5">
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">20%</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Fuel Saved</p>
+</div>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">Real-time</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Visibility</p>
+</div>
+</div>
+<div class="flex gap-2 mb-5 flex-wrap">
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">GPS/GNSS</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">Cellular IoT</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">React Native</span>
+</div>
+<a class="flex w-full items-center justify-center rounded-lg h-10 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-sm group-hover:shadow-md" href="#">
+                                View Solution
+                            </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+<div class="h-52 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern smart home living room with automated lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBpzFdMZwuDrw4roN5ySvCoLrgW31YigPNTZxJzetKP4Rwv9UgyR08hY3tVbz6FOjxKC2j-zQPs98qRRhT10WLYyh_8s3Q0CT7vv2OOuJC0MC74o_FiGtpKyX9KaR0KZua9eRsnnnq2_Wh1FVRzS06OFxqgRn1P7e3WOyNkKHWV88DsnfoTZCXeE7cjA64rYnYcrvtwl3KzITd5PBsi83jIkgAAM15THma3WEigAyH2tSGUtw3vvuxTVYG0GPhnKlNEo2KfWgNNqo');"></div>
+</div>
+<div class="p-7 flex flex-col flex-1 gap-5">
+<div>
+<h4 class="text-xl font-bold text-zigron-black dark:text-white mb-2 group-hover:text-primary transition-colors">Smart Home Automation</h4>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Best for: Consumer Electronics</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Universal device interoperability</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Energy usage user analytics</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Voice assistant integration</span>
+</div>
+</div>
+<div class="mt-auto pt-5 border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-5">
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">Matter</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Ready</p>
+</div>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">5 Star</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">User Exp.</p>
+</div>
+</div>
+<div class="flex gap-2 mb-5 flex-wrap">
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">BLE/Zigbee</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">AWS IoT</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">Mobile SDK</span>
+</div>
+<a class="flex w-full items-center justify-center rounded-lg h-10 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-sm group-hover:shadow-md" href="#">
+                                View Solution
+                            </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+<div class="h-52 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Medical tablet device showing patient health data graphs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZCZA-vsAEJDKiiUkMEZnyaVPzT3rzuo1bL6QmmBglNqCN0EwdTHVJon3WZ6LSEQaKzXzb7XItTiuxQoL5unDvg4vFv1YZF3Hnj_-eBXqD8iogB-R-r4WUdnccgjjFQNB_ttR80EMMOlSTtDLrCauEDZ-5pOshVot-J93QOeQCzA1XOzE0NUqym5bWJyKlDfJt2PYjBVFUoyp1hzfodXrBKVbOEXU5s19W94el7t1eqjYeY1u2iriFc1adXirLiik5Pz-PXN4kAwk');"></div>
+</div>
+<div class="p-7 flex flex-col flex-1 gap-5">
+<div>
+<h4 class="text-xl font-bold text-zigron-black dark:text-white mb-2 group-hover:text-primary transition-colors">Medical IoT Platform</h4>
+<p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Best for: Remote Patient Monitoring</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">HIPAA Compliant Security</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Real-time Telemetry Integration</span>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Device Agnostic Architecture</span>
+</div>
+</div>
+<div class="mt-auto pt-5 border-t border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-5">
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">ISO</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">27001</p>
+</div>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="text-center">
+<p class="text-xl font-black text-zigron-black dark:text-white">Secure</p>
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-wide">By Design</p>
+</div>
+</div>
+<div class="flex gap-2 mb-5 flex-wrap">
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">HL7/FHIR</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">End-to-End Enc</span>
+<span class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-[11px] font-semibold rounded text-gray-600 dark:text-gray-400">Azure Health</span>
+</div>
+<a class="flex w-full items-center justify-center rounded-lg h-10 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-sm group-hover:shadow-md" href="#">
+                                View Solution
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark overflow-hidden">
+<div class="layout-container px-6 md:px-10 max-w-6xl mx-auto">
+<div class="mb-16 text-center md:text-left">
+<h2 class="text-3xl md:text-4xl font-black text-zigron-black dark:text-white mb-6">How our solutions are built</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-2xl text-lg leading-relaxed">
+                    A modular, scalable, and secure-by-design framework that integrates seamlessly with your existing infrastructure.
+                </p>
+</div>
+<div class="relative">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+<div class="flex flex-row md:flex-col items-center md:text-center gap-6 md:gap-4 group">
+<div class="size-20 rounded-2xl bg-white dark:bg-gray-800 text-primary flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none shrink-0 transition-transform group-hover:scale-110 duration-300">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div class="text-left md:text-center">
+<h4 class="font-bold text-lg text-zigron-black dark:text-white mb-1">Device / Edge</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Firmware, Sensors, Gateways</p>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:text-center gap-6 md:gap-4 group">
+<div class="size-20 rounded-2xl bg-white dark:bg-gray-800 text-primary flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none shrink-0 transition-transform group-hover:scale-110 duration-300">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div class="text-left md:text-center">
+<h4 class="font-bold text-lg text-zigron-black dark:text-white mb-1">Data Ingestion</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">MQTT, API, Streaming</p>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:text-center gap-6 md:gap-4 group">
+<div class="size-20 rounded-2xl bg-white dark:bg-gray-800 text-primary flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none shrink-0 transition-transform group-hover:scale-110 duration-300">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div class="text-left md:text-center">
+<h4 class="font-bold text-lg text-zigron-black dark:text-white mb-1">Processing / AI</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Analytics, ML Models, Rules</p>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:text-center gap-6 md:gap-4 group">
+<div class="size-20 rounded-2xl bg-white dark:bg-gray-800 text-primary flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none shrink-0 transition-transform group-hover:scale-110 duration-300">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div class="text-left md:text-center">
+<h4 class="font-bold text-lg text-zigron-black dark:text-white mb-1">App / Dashboard</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Web, Mobile, BI Tools</p>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:text-center gap-6 md:gap-4 group">
+<div class="size-20 rounded-2xl bg-white dark:bg-gray-800 text-primary flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none shrink-0 transition-transform group-hover:scale-110 duration-300">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div class="text-left md:text-center">
+<h4 class="font-bold text-lg text-zigron-black dark:text-white mb-1">Security / Ops</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Auth, Monitoring, Updates</p>
+</div>
+</div>
+</div>
+<div class="hidden md:block absolute top-[2.5rem] left-0 w-full h-0.5 border-t-2 border-dashed border-gray-200 dark:border-gray-800 -z-0"></div>
+<div class="md:hidden absolute left-[2.5rem] top-0 h-full w-0.5 border-l-2 border-dashed border-gray-200 dark:border-gray-800 -z-0"></div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-primary/5 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
+<div class="layout-container px-6 md:px-10 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-black text-zigron-black dark:text-white">Pick your starting point</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<a class="group relative flex flex-col p-8 bg-white dark:bg-background-dark rounded-xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" href="#">
+<div class="size-14 bg-red-50 dark:bg-red-900/20 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h3 class="text-xl font-bold text-zigron-black dark:text-white mb-3">Start with a Solution</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-8 flex-1 leading-relaxed">Browse our pre-built frameworks to accelerate your go-to-market timeline.</p>
+<div class="flex items-center text-primary font-bold text-sm gap-1 group-hover:gap-2 transition-all">
+                        Explore Catalog <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</a>
+<a class="group relative flex flex-col p-8 bg-white dark:bg-background-dark rounded-xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" href="#">
+<div class="size-14 bg-blue-50 dark:bg-blue-900/20 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h3 class="text-xl font-bold text-zigron-black dark:text-white mb-3">Start with your Industry</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-8 flex-1 leading-relaxed">Find specialized expertise tailored to your specific market sector vertical.</p>
+<div class="flex items-center text-blue-600 font-bold text-sm gap-1 group-hover:gap-2 transition-all">
+                        View Industries <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</a>
+<a class="group relative flex flex-col p-8 bg-white dark:bg-background-dark rounded-xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" href="#">
+<div class="size-14 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-800 group-hover:text-white transition-colors">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h3 class="text-xl font-bold text-zigron-black dark:text-white mb-3">Start with Services</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-8 flex-1 leading-relaxed">Engage our engineering teams for custom development from scratch.</p>
+<div class="flex items-center text-gray-600 dark:text-gray-300 font-bold text-sm gap-1 group-hover:gap-2 transition-all">
+                        See Services <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="layout-container px-6 md:px-10 max-w-7xl mx-auto flex flex-col gap-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-100 dark:border-gray-800">
+<div class="flex flex-col gap-2 border-l-4 border-primary pl-6">
+<h4 class="text-5xl font-black text-zigron-black dark:text-white">100+</h4>
+<p class="text-sm font-bold text-gray-500 uppercase tracking-widest">Enterprise Deployments</p>
+</div>
+<div class="flex flex-col gap-2 border-l-4 border-gray-100 dark:border-gray-700 pl-6 hover:border-primary transition-colors duration-500">
+<h4 class="text-5xl font-black text-zigron-black dark:text-white">$500M+</h4>
+<p class="text-sm font-bold text-gray-500 uppercase tracking-widest">Client Value Created</p>
+</div>
+<div class="flex flex-col gap-2 border-l-4 border-gray-100 dark:border-gray-700 pl-6 hover:border-primary transition-colors duration-500">
+<h4 class="text-5xl font-black text-zigron-black dark:text-white">24/7</h4>
+<p class="text-sm font-bold text-gray-500 uppercase tracking-widest">Mission Critical Support</p>
+</div>
+<div class="flex flex-col gap-2 border-l-4 border-gray-100 dark:border-gray-700 pl-6 hover:border-primary transition-colors duration-500">
+<h4 class="text-5xl font-black text-zigron-black dark:text-white">15yr</h4>
+<p class="text-sm font-bold text-gray-500 uppercase tracking-widest">Track Record</p>
+</div>
+</div>
+<div class="bg-background-light dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-14 flex flex-col lg:flex-row gap-16 items-start">
+<div class="flex-1">
+<h3 class="text-3xl font-bold text-zigron-black dark:text-white mb-6">Integration &amp; Compatibility</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-8 text-lg leading-relaxed">
+                        We don't build in silos. Our solutions are engineered to fit your ecosystem, whether on-premise, cloud, or hybrid.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 shadow-sm">SAP</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 shadow-sm">Salesforce</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 shadow-sm">AWS</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 shadow-sm">Azure</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 shadow-sm">Google Cloud</span>
+<span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 shadow-sm">Oracle</span>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="grid grid-cols-1 gap-6">
+<div class="flex items-start gap-5 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+<svg class="w-8 h-8 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div>
+<h5 class="text-xl font-bold text-zigron-black dark:text-white mb-1">Enterprise Security</h5>
+<p class="text-sm text-gray-500 dark:text-gray-400">SOC2 Type II Ready, End-to-End Encryption</p>
+</div>
+</div>
+<div class="flex items-start gap-5 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+<svg class="w-8 h-8 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div>
+<h5 class="text-xl font-bold text-zigron-black dark:text-white mb-1">Flexible Deployment</h5>
+<p class="text-sm text-gray-500 dark:text-gray-400">Cloud-native, On-premise, or Edge Hybrid</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-[#f8f6f6] dark:bg-[#151515]">
+<div class="layout-container px-6 md:px-10 max-w-3xl mx-auto">
+<h2 class="text-3xl font-black text-zigron-black dark:text-white text-center mb-12">Frequently Asked Questions</h2>
+<div class="flex flex-col gap-5">
+<details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 open:ring-2 open:ring-primary/20 open:border-primary/50 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-zigron-black dark:text-white list-none text-lg">
+<span>Do you customize these solutions for OEM deployment?</span>
+<span class="transition-transform group-open:rotate-180">
+<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                        Yes. All our solution frameworks are designed as white-label ready foundations. We customize the branding, user interface, and specific feature sets to match your product roadmap and market requirements, allowing you to launch under your own brand faster.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 open:ring-2 open:ring-primary/20 open:border-primary/50 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-zigron-black dark:text-white list-none text-lg">
+<span>Can we start with a pilot and scale?</span>
+<span class="transition-transform group-open:rotate-180">
+<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                        Absolutely. We typically recommend a Proof of Concept (PoC) or Pilot phase to validate technical feasibility and ROI. Our architecture is cloud-native and scalable, meaning the transition from pilot to full-scale production is seamless.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 open:ring-2 open:ring-primary/20 open:border-primary/50 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-zigron-black dark:text-white list-none text-lg">
+<span>Do you handle data pipelines + MLOps?</span>
+<span class="transition-transform group-open:rotate-180">
+<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                        Yes, data engineering is a core part of our offering. We build robust data ingestion pipelines, handle data cleaning and storage, and implement MLOps pipelines to ensure your AI models remain accurate and retrainable in production.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 open:ring-2 open:ring-primary/20 open:border-primary/50 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-zigron-black dark:text-white list-none text-lg">
+<span>What’s your approach to security &amp; compliance?</span>
+<span class="transition-transform group-open:rotate-180">
+<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                        We adopt a "Secure by Design" philosophy. This includes implementing industry-standard encryption, secure authentication (OAuth/SAML), and ensuring compliance with relevant standards like HIPAA, GDPR, and SOC2 depending on your industry needs.
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark text-center">
+<div class="layout-container px-6 md:px-10 max-w-4xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-black text-zigron-black dark:text-white mb-6">Describe your target outcome.</h2>
+<p class="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">We'll help you engineer the path to get there.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-5">
+<button class="flex items-center justify-center rounded-lg h-14 px-10 bg-primary text-white text-lg font-bold hover:bg-red-700 transition-all shadow-xl shadow-red-500/20 hover:shadow-red-500/40 transform hover:-translate-y-1">
+                    Book a Consultation
+                </button>
+<button class="flex items-center justify-center rounded-lg h-14 px-10 bg-gray-100 dark:bg-gray-800 text-zigron-black dark:text-white text-lg font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all transform hover:-translate-y-1">
+                    Contact Sales
+                </button>
+</div>
+</div>
+</section>
+<footer class="bg-zigron-black text-white py-12 border-t border-gray-800">
+<div class="layout-container px-6 md:px-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 flex items-center justify-center">
+<svg class="w-8 h-8 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 11l-2.5-1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"></path></svg>
+</div>
+<h2 class="text-xl font-bold leading-tight">Zigron</h2>
+</div>
+<div class="flex gap-8 text-sm text-gray-400 font-medium">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Sitemap</a>
+</div>
+<div class="text-sm text-gray-500">
+                © 2024 Zigron Inc. All rights reserved.
+            </div>
+</div>
+</footer>
+</div>
+
+</body></html>

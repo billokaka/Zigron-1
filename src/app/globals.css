@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Zigron Design System - Color Tokens */
+@theme {
+  /* Brand Colors */
+  --color-zigron-red: #C0272D;
+  --color-zigron-black: #1A1A1A;
+  --color-zigron-gray: #666666;
+  --color-zigron-light: #F2F2F2;
+
+  /* Additional mappings for existing variables if they exist in components */
+  --color-primary: var(--color-zigron-red);
+  --color-primary-dark: #A02025;
+  /* Slightly darker red for states */
+
+  /* Surface Colors */
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: #0D0D0D;
+
+  /* Border Radius */
+  --radius-DEFAULT: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 9999px;
+
+  /* Font Family — sourced from next/font CSS variables */
+  --font-poppins: var(--font-poppins, "Poppins", sans-serif);
+  --font-mono: var(--font-ibm-plex-mono, "IBM Plex Mono", monospace);
+}
+
+/* Dark mode with class strategy */
+:root {
+  --background: var(--color-background-light);
+  --foreground: var(--color-text-main-light);
+  --surface: var(--color-surface-light);
+  --text-muted: var(--color-text-muted-light);
+}
+
+.dark {
+  --background: var(--color-background-dark);
+  --foreground: var(--color-text-main-dark);
+  --surface: var(--color-surface-dark);
+  --text-muted: var(--color-text-muted-dark);
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-zigron-light);
+  color: var(--color-zigron-black);
+  font-family: var(--font-poppins);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: var(--color-zigron-black);
+  color: #FFFFFF;
+}
+
+/* Noise overlay — eliminates flat digital look */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+}
+
+/* Custom scrollbar hiding utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

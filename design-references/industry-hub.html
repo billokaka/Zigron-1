@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Industries Hub - Zigron</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-dark": "#c40f0f",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#1a1a1a",
+                        "text-main": "#111111",
+                        "text-muted": "#555555",
+                    },
+                    fontFamily: {
+                        "sans": ["Poppins", "sans-serif"],
+                        "display": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem" },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }.transition-all-custom {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-white text-text-main font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-primary-dark">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+<div class="px-4 md:px-8 py-4 flex items-center justify-between max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2L2 19H22L12 2ZM12 6L17.5 16H6.5L12 6Z"></path>
+</svg>
+</div>
+<h2 class="text-text-main text-2xl font-bold tracking-tight">Zigron</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Industries</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Work</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Company</a>
+</nav>
+<button class="flex items-center justify-center rounded-lg h-11 px-6 bg-primary hover:bg-primary-dark transition-all-custom text-white text-sm font-semibold shadow-sm hover:shadow-lg hover:-translate-y-0.5">
+                Contact Us
+            </button>
+</div>
+<button class="md:hidden text-text-main p-2">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</header>
+<section class="relative bg-white pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+<div class="flex flex-col gap-8 lg:w-1/2 text-left">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="h-px w-8 bg-primary"></span>
+<span class="text-primary font-bold tracking-widest text-xs uppercase">B2B IoT &amp; Engineering</span>
+</div>
+<h1 class="text-text-main text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                        Industries We Serve
+                    </h1>
+<p class="text-text-muted text-lg lg:text-xl leading-relaxed max-w-lg font-light">
+                        We build IoT, AI, and engineering systems tailored to regulated and operationally complex industries.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-5 items-center">
+<button class="flex items-center justify-center rounded-lg h-14 px-8 bg-primary hover:bg-primary-dark transition-all-custom text-white text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        Talk to an expert
+                    </button>
+<a class="group flex items-center gap-2 text-text-main font-semibold text-base hover:text-primary transition-colors px-4 py-3 rounded-lg hover:bg-gray-50" href="#">
+                        View case studies
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="w-full h-72 md:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative bg-gray-900 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract industrial technology interface with blue lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAk_YWZ-W29oGJyGuMrYbWmRAEmUrrsOj55G-aXQxfMlB3oSQ0tqIO6Ci0RdqT1gumJmDgQXzUF6Hjfzg3BSPCDJyXlMmgNG5p_iuTobMaxJ2omHuqVDySLgT3tU5KI37V9___kPb4wSKeZciqsH9AAbaWJokD3iDsgvm-dlJaiRu8PIfVsV33mtT8hZAW9fLynn7L6osQKQSWzplL_e9xbN6Fz5XaJp5bRonR6NiuQmD3xAB7qbFwMV3u3z562uOKVxKaIg28M98s");'></div>
+<div class="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<div class="w-16 h-1 bg-primary mb-4"></div>
+<p class="text-white/90 font-medium text-sm tracking-wide">ENGINEERING FOR SCALE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="border-y border-gray-100 bg-white/80 backdrop-blur sticky top-[73px] z-40 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 md:px-8 py-4">
+<div class="flex gap-3 overflow-x-auto hide-scrollbar items-center md:justify-center py-1">
+<span class="text-xs font-bold uppercase text-gray-400 mr-2 shrink-0 tracking-wide">Filter by outcome:</span>
+<button class="flex h-9 shrink-0 items-center px-5 rounded-full bg-black text-white text-sm font-medium hover:bg-primary transition-colors shadow-sm">
+                All Industries
+            </button>
+<button class="flex h-9 shrink-0 items-center px-5 rounded-full border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors">
+                Operational Efficiency
+            </button>
+<button class="flex h-9 shrink-0 items-center px-5 rounded-full border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors">
+                Asset Monitoring
+            </button>
+<button class="flex h-9 shrink-0 items-center px-5 rounded-full border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors">
+                Compliance &amp; Security
+            </button>
+<button class="flex h-9 shrink-0 items-center px-5 rounded-full border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors">
+                Automation
+            </button>
+</div>
+</div>
+</div>
+<section class="bg-background-light py-20 md:py-28">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group flex flex-col bg-white rounded-2xl border border-gray-200 p-8 shadow-card hover:shadow-card-hover hover:border-primary/20 transition-all-custom duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-10 transition-opacity">
+<svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 15h-2v2h2m0-6h-2v2h2m2 6h-8v-2h2v-2h-2v-2h2v-2h-2V9.83L19.36 6l1.27.77M22 22H2V2h20M13 13h-2v2h2m0-6h-2v2h2m-4 6H7v-2h2m0-6H7v2h2m-4 6H3v-2h2m0-6H3v2h2z"></path></svg>
+</div>
+<div class="flex items-start justify-between mb-6">
+<div class="size-14 rounded-xl bg-red-50 text-primary flex items-center justify-center border border-red-100">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-primary transition-colors">Manufacturing</h3>
+<p class="text-text-muted mb-6 leading-relaxed">Reduce downtime, improve OEE, and enable predictive maintenance.</p>
+<ul class="flex flex-col gap-3 mb-8 flex-grow">
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Digital Twin implementation
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        HMI &amp; SCADA Modernization
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Industrial IoT Gateways
+                    </li>
+</ul>
+<div class="pt-6 border-t border-gray-100 mt-auto">
+<div class="flex gap-3 text-xs font-semibold text-gray-500 mb-5">
+<a class="hover:text-primary hover:underline" href="#">IIoT Solutions</a> •
+                        <a class="hover:text-primary hover:underline" href="#">Predictive Maint.</a>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                        Explore Manufacturing 
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-2xl border border-gray-200 p-8 shadow-card hover:shadow-card-hover hover:border-primary/20 transition-all-custom duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-10 transition-opacity">
+<svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"></path></svg>
+</div>
+<div class="flex items-start justify-between mb-6">
+<div class="size-14 rounded-xl bg-red-50 text-primary flex items-center justify-center border border-red-100">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-primary transition-colors">Energy</h3>
+<p class="text-text-muted mb-6 leading-relaxed">Grid optimization and renewable asset management systems.</p>
+<ul class="flex flex-col gap-3 mb-8 flex-grow">
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Smart Metering Infrastructure
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Grid Load Balancing AI
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Renewable Asset Tracking
+                    </li>
+</ul>
+<div class="pt-6 border-t border-gray-100 mt-auto">
+<div class="flex gap-3 text-xs font-semibold text-gray-500 mb-5">
+<a class="hover:text-primary hover:underline" href="#">Smart Grid</a> •
+                        <a class="hover:text-primary hover:underline" href="#">Solar/Wind Tech</a>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                        Explore Energy
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-2xl border border-gray-200 p-8 shadow-card hover:shadow-card-hover hover:border-primary/20 transition-all-custom duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-10 transition-opacity">
+<svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+</div>
+<div class="flex items-start justify-between mb-6">
+<div class="size-14 rounded-xl bg-red-50 text-primary flex items-center justify-center border border-red-100">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-primary transition-colors">Healthcare</h3>
+<p class="text-text-muted mb-6 leading-relaxed">HIPAA-compliant remote patient monitoring and IoMT.</p>
+<ul class="flex flex-col gap-3 mb-8 flex-grow">
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        IoMT Device Integration
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Telehealth Platforms
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Secure Patient Data Pipelines
+                    </li>
+</ul>
+<div class="pt-6 border-t border-gray-100 mt-auto">
+<div class="flex gap-3 text-xs font-semibold text-gray-500 mb-5">
+<a class="hover:text-primary hover:underline" href="#">MedTech</a> •
+                        <a class="hover:text-primary hover:underline" href="#">HIPAA Compliance</a>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                        Explore Healthcare
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-2xl border border-gray-200 p-8 shadow-card hover:shadow-card-hover hover:border-primary/20 transition-all-custom duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-10 transition-opacity">
+<svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+</div>
+<div class="flex items-start justify-between mb-6">
+<div class="size-14 rounded-xl bg-red-50 text-primary flex items-center justify-center border border-red-100">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-primary transition-colors">Smart Home</h3>
+<p class="text-text-muted mb-6 leading-relaxed">Connected consumer ecosystems and home automation.</p>
+<ul class="flex flex-col gap-3 mb-8 flex-grow">
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Matter/Zigbee Hubs
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Mobile Companion Apps
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Voice Control Integration
+                    </li>
+</ul>
+<div class="pt-6 border-t border-gray-100 mt-auto">
+<div class="flex gap-3 text-xs font-semibold text-gray-500 mb-5">
+<a class="hover:text-primary hover:underline" href="#">Consumer IoT</a> •
+                        <a class="hover:text-primary hover:underline" href="#">Automation</a>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                        Explore Smart Home
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="group flex flex-col bg-white rounded-2xl border border-gray-200 p-8 shadow-card hover:shadow-card-hover hover:border-primary/20 transition-all-custom duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-10 transition-opacity">
+<svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path></svg>
+</div>
+<div class="flex items-start justify-between mb-6">
+<div class="size-14 rounded-xl bg-red-50 text-primary flex items-center justify-center border border-red-100">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-text-main mb-3 group-hover:text-primary transition-colors">Transportation</h3>
+<p class="text-text-muted mb-6 leading-relaxed">Fleet tracking, logistics optimization, and cold chain monitoring.</p>
+<ul class="flex flex-col gap-3 mb-8 flex-grow">
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Fleet Telematics
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Route Optimization AI
+                    </li>
+<li class="flex gap-3 text-sm text-gray-700 items-start">
+<svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Cold Chain Sensors
+                    </li>
+</ul>
+<div class="pt-6 border-t border-gray-100 mt-auto">
+<div class="flex gap-3 text-xs font-semibold text-gray-500 mb-5">
+<a class="hover:text-primary hover:underline" href="#">Logistics</a> •
+                        <a class="hover:text-primary hover:underline" href="#">Tracking</a>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                        Explore Transportation
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white py-24 border-t border-gray-100">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2">
+<h2 class="text-3xl lg:text-4xl font-bold text-text-main mb-10 tracking-tight">Common outcomes by industry</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 p-5 rounded-xl bg-background-light border border-gray-100 hover:border-gray-200 transition-colors">
+<div class="size-10 rounded-full bg-red-50 flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="font-bold text-text-main text-base">Downtime reduction</span>
+</div>
+<div class="flex items-center gap-4 p-5 rounded-xl bg-background-light border border-gray-100 hover:border-gray-200 transition-colors">
+<div class="size-10 rounded-full bg-red-50 flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="font-bold text-text-main text-base">Energy optimization</span>
+</div>
+<div class="flex items-center gap-4 p-5 rounded-xl bg-background-light border border-gray-100 hover:border-gray-200 transition-colors">
+<div class="size-10 rounded-full bg-red-50 flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="font-bold text-text-main text-base">Remote monitoring</span>
+</div>
+<div class="flex items-center gap-4 p-5 rounded-xl bg-background-light border border-gray-100 hover:border-gray-200 transition-colors">
+<div class="size-10 rounded-full bg-red-50 flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="font-bold text-text-main text-base">Safety compliance</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="bg-black text-white p-10 lg:p-12 rounded-2xl relative overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-8">How we deliver</h3>
+<div class="space-y-8">
+<div class="flex gap-5">
+<span class="font-black text-4xl text-primary opacity-80 leading-none">01</span>
+<div>
+<h4 class="font-bold text-lg mb-1">IoT Connectivity</h4>
+<p class="text-gray-400 text-sm leading-relaxed">Seamless hardware-to-cloud data pipelines utilizing best-in-class protocols.</p>
+</div>
+</div>
+<div class="flex gap-5">
+<span class="font-black text-4xl text-primary opacity-80 leading-none">02</span>
+<div>
+<h4 class="font-bold text-lg mb-1">AI &amp; Analytics</h4>
+<p class="text-gray-400 text-sm leading-relaxed">Actionable insights derived from raw sensor data through advanced ML models.</p>
+</div>
+</div>
+<div class="flex gap-5">
+<span class="font-black text-4xl text-primary opacity-80 leading-none">03</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Engineering Excellence</h4>
+<p class="text-gray-400 text-sm leading-relaxed">Robust software architecture built for scale, security, and maintainability.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 -bottom-16 opacity-10 text-white">
+<svg class="w-80 h-80" fill="currentColor" viewBox="0 0 24 24"><path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1 0v-6h4v6H5zm15-8h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v6zm-9 6H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2v-4zm-4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm2-4h-2v2h2v-2z"></path></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="border-y border-gray-100 bg-background-light py-10">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex flex-col md:w-1/3 text-center md:text-left">
+<h4 class="font-bold text-text-main text-sm uppercase tracking-wider mb-2">Trusted in high-stakes environments</h4>
+<p class="text-xs text-text-muted">Regulated, complex, mission-critical.</p>
+</div>
+<div class="flex flex-wrap gap-8 md:gap-12 items-center justify-center md:justify-end flex-1 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 group">
+<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold text-sm text-text-main">ISO 27001</span>
+</div>
+<div class="flex items-center gap-2 group">
+<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold text-sm text-text-main">HIPAA Compliant</span>
+</div>
+<div class="flex items-center gap-2 group">
+<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold text-sm text-text-main">GDPR Ready</span>
+</div>
+<div class="flex items-center gap-2 group">
+<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold text-sm text-text-main">Agile Delivery</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white py-24">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="flex justify-between items-end mb-12">
+<h2 class="text-3xl lg:text-4xl font-bold text-text-main tracking-tight">Recent Work</h2>
+<a class="hidden md:flex items-center text-primary font-bold hover:gap-3 transition-all" href="#">
+                View all case studies 
+                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="h-56 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Oil rig platform in ocean" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmDROdxDgGls4YIVvdTCIMsFYU7abeGkd-8ksfN_Jw_sfAvvxcAx_Yt4fVFb6HqZd8cNUDUMCQZ-40s541hUAsm6EQIEP3T0vmJBfX10SySNM-nuwWSkEO6_3Vrfnl9TOVdWJEOoiFmthDljpYQ0lzR5xYz90jBWE2ovERaqvv3ouTjLXnc9w8YJnLYshx29UTF420oMbG8-c1cN7PNsCyCFFJGxNlRBtKYKWj6yNopUmEMZzpwKli7c-kJ1Wn-XpnZvXRli3Bvqs");'></div>
+<div class="p-8 flex flex-col flex-grow relative z-10 bg-white">
+<div class="mb-4">
+<span class="px-3 py-1.5 rounded-full bg-red-50 text-primary text-xs font-bold uppercase tracking-wide">Energy</span>
+</div>
+<h3 class="font-bold text-xl mb-3 leading-snug text-text-main group-hover:text-primary transition-colors">Predictive Maintenance for Offshore Rigs</h3>
+<p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Saved $2M/year in reduced downtime using vibration sensor analysis.</p>
+<a class="text-text-main font-bold text-sm flex items-center group-hover:text-primary transition-colors" href="#">
+                        Read case study 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="h-56 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Modern medical laboratory equipment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBt2X_oU-uXHnA_4nXyiqqS32mMe8c_mXM0z62gyuveTGVh8KheiMdsOunhJtL4ZUARhlO_z_3OmJ1YiD9-17VMRxe5dpmvO4THUvVFxGAg1SAmowAMKGOv-4FzdDQrsFcRouJpM4At-XE02hKztnY6d_wWwtiav24SOKjly6wLnhJ-x8cA9hjMEMmwNfeAMEfEYFCiaZdlfiy1o0GQz7bs9FnmtF5fKRHqllIQG9Ckea9lxyYUcQvdL0p-QSymiTWV8o7j4bOwvz0");'></div>
+<div class="p-8 flex flex-col flex-grow relative z-10 bg-white">
+<div class="mb-4">
+<span class="px-3 py-1.5 rounded-full bg-red-50 text-primary text-xs font-bold uppercase tracking-wide">Healthcare</span>
+</div>
+<h3 class="font-bold text-xl mb-3 leading-snug text-text-main group-hover:text-primary transition-colors">Remote Cardiac Monitoring Platform</h3>
+<p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">HIPAA-compliant cloud architecture handling 50k+ daily patients.</p>
+<a class="text-text-main font-bold text-sm flex items-center group-hover:text-primary transition-colors" href="#">
+                        Read case study 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="h-56 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Truck driving on highway" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOr-uvHEVNDdMYLWvmARy7ky06MS-EVkGGhGi8yYqXxFBvE1hXx5-fwLnI85qAZn-qD_wBrxTG-Hzk57O_r1w14iykxFOFSx-StdGbEcOdu3adocZd0JHR8XCOIUzvtLvqBEue-t26-QxNK7MWJJgkwhpXjwGtqgpgN1mKyIt-cOehLrEviRtBe_lfBOa1FATEX62gQENDVHsiDjRg6m7N7m8fGZjG3jBloYqnNt7tjE6oTIm_rv8AKvpiX91hLklzz98FQUsAxQA");'></div>
+<div class="p-8 flex flex-col flex-grow relative z-10 bg-white">
+<div class="mb-4">
+<span class="px-3 py-1.5 rounded-full bg-red-50 text-primary text-xs font-bold uppercase tracking-wide">Logistics</span>
+</div>
+<h3 class="font-bold text-xl mb-3 leading-snug text-text-main group-hover:text-primary transition-colors">Cold Chain Logistics Tracker</h3>
+<p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Real-time temperature monitoring for pharmaceutical transport.</p>
+<a class="text-text-main font-bold text-sm flex items-center group-hover:text-primary transition-colors" href="#">
+                        Read case study 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-10 md:hidden text-center">
+<a class="inline-flex items-center text-primary font-bold hover:gap-3 transition-all" href="#">
+                View all case studies 
+                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-background-light py-20">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<h2 class="text-2xl font-bold text-text-main mb-10 tracking-tight">Solutions most used across industries</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<a class="bg-white p-8 rounded-xl border border-gray-200 hover:border-primary/50 hover:shadow-lg transition-all group text-center md:text-left" href="#">
+<div class="mb-4 text-gray-400 group-hover:text-primary transition-colors">
+<svg class="w-10 h-10 mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<h3 class="font-bold text-text-main text-lg mb-2">IoT Cloud Platforms</h3>
+<p class="text-xs text-gray-500">Scalable backend infra</p>
+</a>
+<a class="bg-white p-8 rounded-xl border border-gray-200 hover:border-primary/50 hover:shadow-lg transition-all group text-center md:text-left" href="#">
+<div class="mb-4 text-gray-400 group-hover:text-primary transition-colors">
+<svg class="w-10 h-10 mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<h3 class="font-bold text-text-main text-lg mb-2">Edge AI</h3>
+<p class="text-xs text-gray-500">On-device intelligence</p>
+</a>
+<a class="bg-white p-8 rounded-xl border border-gray-200 hover:border-primary/50 hover:shadow-lg transition-all group text-center md:text-left" href="#">
+<div class="mb-4 text-gray-400 group-hover:text-primary transition-colors">
+<svg class="w-10 h-10 mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<h3 class="font-bold text-text-main text-lg mb-2">Embedded Firmware</h3>
+<p class="text-xs text-gray-500">Low-level device coding</p>
+</a>
+<a class="bg-white p-8 rounded-xl border border-gray-200 hover:border-primary/50 hover:shadow-lg transition-all group text-center md:text-left" href="#">
+<div class="mb-4 text-gray-400 group-hover:text-primary transition-colors">
+<svg class="w-10 h-10 mx-auto md:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<h3 class="font-bold text-text-main text-lg mb-2">Mobile Apps</h3>
+<p class="text-xs text-gray-500">User control interfaces</p>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-white py-24">
+<div class="max-w-4xl mx-auto px-4 md:px-8">
+<h2 class="text-3xl lg:text-4xl font-bold text-text-main mb-14 text-center tracking-tight">Frequently Asked Questions</h2>
+<div class="space-y-5">
+<details class="group bg-background-light rounded-2xl border border-gray-100 open:bg-white open:shadow-lg open:border-primary/10 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-text-main text-lg select-none">
+                    Do you work with regulated data (healthcare, infra)?
+                    <div class="size-8 rounded-full bg-gray-100 flex items-center justify-center group-open:bg-primary group-open:text-white transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</summary>
+<div class="px-6 pb-8 text-gray-600 leading-relaxed">
+                    Yes, we specialize in high-compliance environments. Our engineering practices adhere to ISO 27001, HIPAA, and GDPR standards. We build secure data pipelines from the edge device all the way to the cloud.
+                </div>
+</details>
+<details class="group bg-background-light rounded-2xl border border-gray-100 open:bg-white open:shadow-lg open:border-primary/10 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-text-main text-lg select-none">
+                    Can you integrate into existing systems (SCADA/ERP)?
+                     <div class="size-8 rounded-full bg-gray-100 flex items-center justify-center group-open:bg-primary group-open:text-white transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</summary>
+<div class="px-6 pb-8 text-gray-600 leading-relaxed">
+                    Absolutely. We rarely start with a blank slate. Our team has extensive experience building middleware and API layers to bridge modern IoT solutions with legacy systems like SCADA, EHRs, SAP, and other ERPs.
+                </div>
+</details>
+<details class="group bg-background-light rounded-2xl border border-gray-100 open:bg-white open:shadow-lg open:border-primary/10 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-text-main text-lg select-none">
+                    Do you support multi-site rollouts?
+                     <div class="size-8 rounded-full bg-gray-100 flex items-center justify-center group-open:bg-primary group-open:text-white transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</summary>
+<div class="px-6 pb-8 text-gray-600 leading-relaxed">
+                    Yes. We build scalable provisioning systems that allow for zero-touch deployment of devices across multiple geographies, ensuring consistency and ease of management.
+                </div>
+</details>
+<details class="group bg-background-light rounded-2xl border border-gray-100 open:bg-white open:shadow-lg open:border-primary/10 transition-all duration-300">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-text-main text-lg select-none">
+                    Can you start with an MVP then scale?
+                     <div class="size-8 rounded-full bg-gray-100 flex items-center justify-center group-open:bg-primary group-open:text-white transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</summary>
+<div class="px-6 pb-8 text-gray-600 leading-relaxed">
+                    We recommend it. Our "Discovery to Delivery" process is designed to validate technical feasibility and ROI quickly with a POC or MVP before committing to full-scale engineering and manufacturing.
+                </div>
+</details>
+</div>
+</div>
+</section>
+<section class="bg-black py-24 text-center px-4 relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black"></div>
+<div class="max-w-4xl mx-auto flex flex-col items-center gap-8 relative z-10">
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">Tell us your industry + challenge</h2>
+<p class="text-gray-400 text-lg md:text-xl max-w-xl font-light">
+            Ready to modernize your operations? Our engineers are ready to scope your solution.
+        </p>
+<div class="flex flex-col sm:flex-row gap-5 w-full justify-center mt-6">
+<button class="flex items-center justify-center rounded-lg h-14 px-10 bg-primary hover:bg-primary-dark transition-all text-white text-lg font-bold shadow-xl hover:scale-105">
+                Schedule a Consultation
+            </button>
+<button class="flex items-center justify-center rounded-lg h-14 px-10 bg-transparent border-2 border-white/20 hover:bg-white/10 hover:border-white transition-all text-white text-lg font-bold">
+                Contact Sales
+            </button>
+</div>
+</div>
+</section>
+<footer class="bg-white border-t border-gray-100 py-16">
+<div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-gray-500">
+<div class="flex items-center gap-3 text-text-main font-bold text-lg">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2L2 19H22L12 2ZM12 6L17.5 16H6.5L12 6Z"></path>
+</svg>
+</div>
+<span>Zigron</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="font-light">
+            © 2024 Zigron Inc. All rights reserved.
+        </div>
+</div>
+</footer>
+
+</body></html>
