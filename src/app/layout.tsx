@@ -88,7 +88,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
       </head>
       <body className="font-sans antialiased overflow-x-hidden">
-        <div className="noise-overlay" />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

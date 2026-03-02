@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Zap } from "lucide-react";
 
 const footerLinks = {
   solutions: [
@@ -43,7 +42,7 @@ export function Footer() {
                 alt="Zigron Logo"
                 width={120}
                 height={35}
-                className="w-28 md:w-[120px] h-auto grayscale dark:invert brightness-0 dark:brightness-100 dark:contrast-100 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
+                className="w-28 md:w-[120px] h-auto dark:brightness-0 dark:invert opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
             </Link>
             <p className="text-xs text-gray-500 mb-4">
