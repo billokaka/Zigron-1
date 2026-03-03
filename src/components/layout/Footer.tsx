@@ -42,7 +42,7 @@ export function Footer() {
                 alt="Zigron Logo"
                 width={120}
                 height={35}
-                className="w-28 md:w-[120px] h-auto dark:brightness-0 dark:invert opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-28 md:w-[120px] h-auto drop-shadow-sm transition-transform hover:scale-[1.02] dark:brightness-0 dark:invert"
               />
             </Link>
             <p className="text-xs text-gray-500 mb-4">

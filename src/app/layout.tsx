@@ -87,8 +87,11 @@ export default function RootLayout({
         {/* DNS prefetch for external image domains */}
         <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
       </head>
-      <body className="font-sans antialiased overflow-x-hidden">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="font-sans antialiased">
+        <div className="noise-overlay" />
+        <div className="relative w-full overflow-x-hidden min-h-screen flex flex-col">
+          <ThemeProvider>{children}</ThemeProvider>
+        </div>
       </body>
     </html>
   );
