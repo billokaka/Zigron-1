@@ -7,12 +7,8 @@ import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
-  Moon,
-  Sun,
-  Zap,
   ChevronDown,
   Settings,
-  Lightbulb,
   Building2,
   SunIcon,
   Truck,
@@ -20,14 +16,9 @@ import {
   Heart,
   Factory,
   ArrowRight,
-  Shield,
   Code,
-  Globe,
-  Database,
-  Smartphone,
-  Server,
 } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
+import { Link, usePathname } from "@/i18n/routing";
 
 // ============================================================================
 // MEGA MENU DATA
@@ -412,7 +403,6 @@ const simpleNavLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const { theme, toggleTheme } = useTheme();
   const navRef = useRef<HTMLElement>(null);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -512,39 +502,10 @@ export function Header() {
               >
                 Book a consultation
               </Link>
-
-              {/* Dark Mode Toggle */}
-              <button
-                onClick={toggleTheme}
-                className="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors focus:ring-2 focus:ring-primary/50"
-                aria-label={
-                  theme === "dark"
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-                }
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </button>
             </div>
 
-            {/* Mobile Menu Button & Dark Mode */}
+            {/* Mobile Menu Button */}
             <div className="flex items-center gap-2 lg:hidden">
-              <button
-                onClick={toggleTheme}
-                className="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 md:hidden transition-colors"
-                aria-label="Toggle dark mode"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </button>
-
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2.5 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"

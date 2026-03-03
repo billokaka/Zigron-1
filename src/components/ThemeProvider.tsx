@@ -14,9 +14,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // Helper to get initial theme (runs only on client)
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem("zigron-theme");
-  return stored === "dark" ? "dark" : "light";
+  return "light";
 }
 
 // Helper to apply theme to DOM
@@ -54,12 +52,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Toggle theme function
   const toggleTheme = useCallback(() => {
-    setThemeState((prev) => {
-      const newTheme = prev === "light" ? "dark" : "light";
-      localStorage.setItem("zigron-theme", newTheme);
-      applyThemeToDOM(newTheme);
-      return newTheme;
-    });
+    // Disabled dark mode toggle
   }, []);
 
   // Context value - use actual theme after mount, "light" before
