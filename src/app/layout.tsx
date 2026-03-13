@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins, IBM_Plex_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 // ============================================================================
@@ -89,8 +90,15 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <div className="noise-overlay" />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[10000] focus:bg-zigron-red focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold"
+        >
+          Skip to main content
+        </a>
         <div className="relative w-full overflow-x-hidden min-h-screen flex flex-col">
           <ThemeProvider>{children}</ThemeProvider>
+          <CookieConsent />
         </div>
       </body>
     </html>

@@ -36,7 +36,7 @@ export function HeroSection() {
                     alt="Zigron Server Architecture"
                     fill
                     priority
-                    unoptimized
+                    sizes="100vw"
                     className="object-cover opacity-60"
                 />
                 <div

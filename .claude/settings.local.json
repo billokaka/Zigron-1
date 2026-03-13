@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"CSP\\\\|Content-Security-Policy\\\\|X-Frame\\\\|Strict-Transport\\\\|X-Content-Type\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(cd /c/Users/Zigron/Desktop/'Zigron website - Copy')",
+      "Bash(grep -r \"validation\\\\|validate\\\\|schema\\\\|zod\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.ts --include=*.tsx)",
+      "Bash(grep -r \"cors\\\\|CORS\\\\|crossOrigin\\\\|fetch\\\\|XMLHttpRequest\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(npm audit:*)",
+      "Bash(cd /c/Users/Zigron/Desktop/\"Zigron website - Copy\")",
+      "Bash(grep -r \"api/\\\\|/api\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(grep -rn \"import.*form\\\\|import.*Form\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"script\\\\|Script\\\\|window\\\\.\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"localStorage\\\\|sessionStorage\\\\|cookie\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"req\\\\|res\\\\|headers\\\\|setHeader\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.ts --include=*.tsx)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

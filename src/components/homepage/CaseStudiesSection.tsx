@@ -142,7 +142,7 @@ export function CaseStudiesSection() {
                                 alt={study.title}
                                 fill
                                 priority={index === 0}
-                                unoptimized
+                                sizes="100vw"
                                 className="object-cover"
                             />
                             {/* Dark gradient overlay for text readability */}

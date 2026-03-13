@@ -17,8 +17,8 @@ import {
   Factory,
   ArrowRight,
   Code,
+  Zap,
 } from "lucide-react";
-import { Link, usePathname } from "@/i18n/routing";
 
 // ============================================================================
 // MEGA MENU DATA
@@ -273,6 +273,7 @@ function NavItemWithMegaMenu({
   const isOpen = activeDropdown === label;
   const pathname = usePathname();
   const isActive = pathname.startsWith(href);
+  const menuId = `mega-menu-${label.toLowerCase().replace(/\s+/g, "-")}`;
 
   return (
     <div
@@ -281,10 +282,21 @@ function NavItemWithMegaMenu({
     >
       <Link
         href={href}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        aria-controls={menuId}
         className={`flex items-center gap-1.5 text-sm font-semibold transition-colors py-2 group ${isOpen || isActive
           ? "text-primary"
           : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
           }`}
+        onKeyDown={(e) => {
+          if (e.key === "Escape") {
+            setActiveDropdown(null);
+          } else if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setActiveDropdown(isOpen ? null : label);
+          }
+        }}
       >
         <span>{label}</span>
         <ChevronDown
@@ -292,13 +304,16 @@ function NavItemWithMegaMenu({
         />
       </Link>
 
-      {/* Mega Menu Panel bounds to the full screen width outside this div (controlled by Header container) */}
+      {/* Mega Menu Panel */}
       <div
+        id={menuId}
+        role="menu"
+        aria-label={`${label} navigation`}
         className={`fixed left-0 w-full transition-all duration-300 origin-top ${isOpen
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 -translate-y-2 pointer-events-none"
           }`}
-        style={{ top: "80px" }} // Matches nav height
+        style={{ top: "80px" }}
       >
         <DesktopMegaMenu config={config} />
       </div>
@@ -322,6 +337,7 @@ function MobileAccordionItem({
   onClose: () => void;
 }) {
   const [open, setOpen] = useState(false);
+  const panelId = `mobile-panel-${label.toLowerCase().replace(/\s+/g, "-")}`;
 
   return (
     <div className="border-b border-gray-100 dark:border-gray-800 last:border-0">
@@ -337,6 +353,8 @@ function MobileAccordionItem({
           onClick={() => setOpen(!open)}
           className="p-2 -mr-2 rounded-lg text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary transition"
           aria-label={`Toggle ${label} submenu`}
+          aria-expanded={open}
+          aria-controls={panelId}
         >
           <ChevronDown
             className={`w-5 h-5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
@@ -345,6 +363,9 @@ function MobileAccordionItem({
       </div>
 
       <div
+        id={panelId}
+        role="region"
+        aria-label={`${label} submenu`}
         className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-[800px] opacity-100 mb-4" : "max-h-0 opacity-0"
           }`}
       >
@@ -419,6 +440,18 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveDropdown(null);
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <>
       {/* Announcement Bar */}
@@ -488,14 +521,8 @@ export function Header() {
               ))}
             </div>
 
-            {/* Desktop CTAs */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Link
-                href="/work"
-                className="text-sm font-bold text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors"
-              >
-                View case studies
-              </Link>
+            {/* Desktop CTA */}
+            <div className="hidden md:flex items-center">
               <Link
                 href="/contact"
                 className="bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-6 rounded-lg shadow-md focus:ring-4 focus:ring-primary/20 transition-all hover:-translate-y-0.5"
@@ -509,7 +536,9 @@ export function Header() {
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2.5 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                aria-label="Toggle menu"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {mobileMenuOpen ? (
                   <X className="w-6 h-6" />
@@ -523,6 +552,9 @@ export function Header() {
 
         {/* Mobile Menu Overlay */}
         <div
+          id="mobile-menu"
+          role="navigation"
+          aria-label="Mobile navigation"
           className={`lg:hidden fixed top-[80px] left-0 right-0 w-full h-[calc(100vh-80px)] bg-white dark:bg-surface-dark overflow-y-auto transition-all duration-300 ease-in-out ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
         >
@@ -561,19 +593,12 @@ export function Header() {
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="pt-8 flex flex-col gap-4">
-              <Link
-                href="/work"
-                onClick={closeMobileMenu}
-                className="w-full text-center py-3.5 px-6 rounded-lg font-bold text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition"
-              >
-                View case studies
-              </Link>
+            {/* CTA */}
+            <div className="pt-8">
               <Link
                 href="/contact"
                 onClick={closeMobileMenu}
-                className="w-full text-center bg-primary text-white font-bold py-4 px-6 rounded-lg shadow-md hover:bg-primary-dark transition"
+                className="w-full text-center bg-primary text-white font-bold py-4 px-6 rounded-lg shadow-md hover:bg-primary-dark transition block"
               >
                 Book a consultation
               </Link>
