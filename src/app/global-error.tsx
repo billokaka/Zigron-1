@@ -9,7 +9,10 @@ export default function GlobalError({
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, fontFamily: "system-ui, sans-serif" }}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body style={{ margin: 0, fontFamily: "-apple-system, system-ui, sans-serif" }}>
         <div
           style={{
             minHeight: "100vh",
@@ -28,6 +31,7 @@ export default function GlobalError({
               A critical error occurred. Please try refreshing the page.
             </p>
             <button
+              type="button"
               onClick={reset}
               style={{
                 backgroundColor: "#C0272D",

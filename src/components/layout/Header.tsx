@@ -272,7 +272,7 @@ function NavItemWithMegaMenu({
 }) {
   const isOpen = activeDropdown === label;
   const pathname = usePathname();
-  const isActive = pathname.startsWith(href);
+  const isActive = pathname === href || pathname.startsWith(href + "/");
   const menuId = `mega-menu-${label.toLowerCase().replace(/\s+/g, "-")}`;
 
   return (
@@ -418,6 +418,7 @@ function MobileAccordionItem({
 
 const simpleNavLinks = [
   { label: "Work", href: "/work" },
+  { label: "Blog", href: "/blog" },
   { label: "Company", href: "/about-us" },
 ];
 

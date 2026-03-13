@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
+import { getPosts, getCategories, getTags } from "@/lib/wordpress";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://zigron.com";
 
+  // ── Static pages ──────────────────────────────────────────────────────
   const staticPages = [
     "",
     "/about-us",
@@ -61,18 +63,72 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work/terratrak-ai",
   ];
 
-  const allPages = [
+  const buildDate = new Date();
+
+  const staticEntries: MetadataRoute.Sitemap = [
     ...staticPages,
     ...servicePages,
     ...solutionPages,
     ...industryPages,
     ...workPages,
-  ];
-
-  return allPages.map((path) => ({
+  ].map((path) => ({
     url: `${baseUrl}${path}`,
-    lastModified: new Date(),
+    lastModified: buildDate,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : path.split("/").length <= 2 ? 0.8 : 0.6,
   }));
+
+  // ── Dynamic blog pages (from WordPress) ───────────────────────────────
+  let blogEntries: MetadataRoute.Sitemap = [];
+
+  try {
+    const [posts, categories, tags] = await Promise.all([
+      getPosts(1, 100),
+      getCategories(),
+      getTags(),
+    ]);
+
+    blogEntries = [
+      {
+        url: `${baseUrl}/blog`,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 0.8,
+      },
+      ...posts.data.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.modified),
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+      })),
+      ...categories
+        .filter((c) => c.count > 0)
+        .map((cat) => ({
+          url: `${baseUrl}/blog/category/${cat.slug}`,
+          lastModified: new Date(),
+          changeFrequency: "weekly" as const,
+          priority: 0.5,
+        })),
+      ...tags
+        .filter((t) => t.count > 0)
+        .map((tag) => ({
+          url: `${baseUrl}/blog/tag/${tag.slug}`,
+          lastModified: new Date(),
+          changeFrequency: "weekly" as const,
+          priority: 0.4,
+        })),
+    ];
+  } catch {
+    // WordPress API unreachable — only include static blog hub
+    blogEntries = [
+      {
+        url: `${baseUrl}/blog`,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 0.8,
+      },
+    ];
+  }
+
+  return [...staticEntries, ...blogEntries];
 }

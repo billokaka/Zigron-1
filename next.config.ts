@@ -40,6 +40,16 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "zigron.com",
+        pathname: "/wp-content/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cms.zigron.com",
+        pathname: "/**",
+      },
     ],
   },
   async headers() {

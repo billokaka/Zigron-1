@@ -7,14 +7,15 @@ export function proxy(request: NextRequest) {
   // Add CSP header (more flexible than static headers for nonce support)
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "script-src 'self' 'unsafe-inline'",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://images.unsplash.com https://lh3.googleusercontent.com",
+    "img-src 'self' data: blob: https://images.unsplash.com https://lh3.googleusercontent.com https://zigron.com https://cms.zigron.com",
     "font-src 'self' https://fonts.gstatic.com",
-    "connect-src 'self'",
+    "connect-src 'self' https://zigron.com https://cms.zigron.com",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
+    "upgrade-insecure-requests",
   ].join("; ");
 
   response.headers.set("Content-Security-Policy", csp);

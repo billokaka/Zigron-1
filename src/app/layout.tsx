@@ -65,6 +65,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {
@@ -87,6 +91,7 @@ export default function RootLayout({
       <head>
         {/* DNS prefetch for external image domains */}
         <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+        <link rel="dns-prefetch" href="https://cms.zigron.com" />
       </head>
       <body className="font-sans antialiased">
         <div className="noise-overlay" />

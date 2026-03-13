@@ -12,7 +12,24 @@
       "Bash(grep -r \"script\\\\|Script\\\\|window\\\\.\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
       "Bash(grep -r \"localStorage\\\\|sessionStorage\\\\|cookie\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
       "Bash(grep -r \"req\\\\|res\\\\|headers\\\\|setHeader\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.ts --include=*.tsx)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Zigron\\\\Desktop\\\\Zigron website - Copy\\\\src\\\\app\\\\blog\\\\[slug]\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Zigron\\\\Desktop\\\\Zigron website - Copy\\\\src\\\\app\\\\blog\\\\category\\\\[slug]\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Zigron\\\\Desktop\\\\Zigron website - Copy\\\\src\\\\app\\\\blog\\\\tag\\\\[slug]\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" --max-time 10 \"https://zigron.com/wp-json/wp/v2/posts?per_page=1\")",
+      "Bash(curl -s --max-time 10 \"https://zigron.com/wp-json/wp/v2/posts?per_page=1&_embed\")",
+      "Bash(curl -s -I --max-time 10 \"https://zigron.com/wp-json/wp/v2/posts?per_page=9&_embed\")",
+      "Bash(curl -s --max-time 10 \"https://zigron.com/wp-json/wp/v2/categories?per_page=100\")",
+      "Bash(python3 -c \"import sys,json; cats=json.load\\(sys.stdin\\); [print\\(f''''{c[id]}: {c[name]} \\({c[count]}\\)''''\\) for c in cats]\")",
+      "Bash(curl -s --max-time 10 https://zigron.com/wp-json/wp/v2/categories?per_page=100)",
+      "Bash(ls -la \"c:/Users/Zigron/Desktop/Zigron website - Copy/\"*.svg \"c:/Users/Zigron/Desktop/Zigron website - Copy/\"*.md \"c:/Users/Zigron/Desktop/Zigron website - Copy/build.log\")",
+      "Bash(rm public/file.svg public/globe.svg public/next.svg public/vercel.svg public/window.svg)",
+      "Bash(rmdir public/assets)",
+      "Bash(mv \"Zigron Favicon.svg\" public/favicon.svg)",
+      "Bash(rm \"Zigron SVG Logo.svg\")",
+      "Bash(mkdir -p docs)",
+      "Bash(mv Zigron_Website_Requirement_Document.md docs/)"
     ]
   }
 }
