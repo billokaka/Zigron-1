@@ -1,6 +1,6 @@
 "use client";
 
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import parse, {
   domToReact,
   type HTMLReactParserOptions,
@@ -145,14 +145,27 @@ const parserOptions: HTMLReactParserOptions = {
   },
 };
 
+const sanitizeOptions: sanitizeHtml.IOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+    "img", "iframe", "figure", "figcaption", "video", "source",
+    "h1", "h2", "h3", "h4", "h5", "h6", "span",
+  ]),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    img: ["src", "alt", "width", "height", "class", "loading"],
+    iframe: ["src", "width", "height", "frameborder", "allow", "allowfullscreen", "title"],
+    a: ["href", "target", "rel", "class"],
+    span: ["class", "style"],
+    div: ["class", "style"],
+    figure: ["class"],
+    "*": ["id", "class"],
+  },
+  disallowedTagsMode: "discard",
+};
+
 export function WordPressContent({ html }: { html: string }) {
   const processed = preprocessShortcodes(html);
-  const sanitized = DOMPurify.sanitize(processed, {
-    ADD_TAGS: ["iframe"],
-    ADD_ATTR: ["target", "allow", "allowfullscreen", "frameborder"],
-    FORBID_TAGS: ["script", "style", "form", "input", "textarea", "select"],
-    FORBID_ATTR: ["onerror", "onload", "onclick", "onmouseover"],
-  });
+  const sanitized = sanitizeHtml(processed, sanitizeOptions);
 
   return <div className="wp-content">{parse(sanitized, parserOptions)}</div>;
 }
