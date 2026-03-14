@@ -1,5 +1,6 @@
 "use client";
 
+import DOMPurify from "isomorphic-dompurify";
 import parse, {
   domToReact,
   type HTMLReactParserOptions,
@@ -7,6 +8,18 @@ import parse, {
   type DOMNode,
 } from "html-react-parser";
 import Image from "next/image";
+import { slugify } from "@/lib/slugify";
+
+function getTextContent(nodes: DOMNode[]): string {
+  return nodes
+    .map((node) => {
+      if ("data" in node && typeof node.data === "string") return node.data;
+      if ("children" in node && node.children)
+        return getTextContent(node.children as DOMNode[]);
+      return "";
+    })
+    .join("");
+}
 
 function preprocessShortcodes(html: string): string {
   // Handle [caption] shortcode (use [\s\S] instead of . with s flag for ES2017 compat)
@@ -27,24 +40,27 @@ const parserOptions: HTMLReactParserOptions = {
 
     const { name, attribs, children } = domNode;
 
-    // Style headings
+    // Style headings with anchor IDs for TOC
     if (name === "h2") {
+      const id = slugify(getTextContent(children as DOMNode[]));
       return (
-        <h2 className="text-2xl font-bold text-zigron-black dark:text-white mt-10 mb-4">
+        <h2 id={id} className="text-2xl font-bold text-zigron-black dark:text-white mt-10 mb-4 scroll-mt-24">
           {domToReact(children as DOMNode[], parserOptions)}
         </h2>
       );
     }
     if (name === "h3") {
+      const id = slugify(getTextContent(children as DOMNode[]));
       return (
-        <h3 className="text-xl font-bold text-zigron-black dark:text-white mt-8 mb-3">
+        <h3 id={id} className="text-xl font-bold text-zigron-black dark:text-white mt-8 mb-3 scroll-mt-24">
           {domToReact(children as DOMNode[], parserOptions)}
         </h3>
       );
     }
     if (name === "h4") {
+      const id = slugify(getTextContent(children as DOMNode[]));
       return (
-        <h4 className="text-lg font-bold text-zigron-black dark:text-white mt-6 mb-2">
+        <h4 id={id} className="text-lg font-bold text-zigron-black dark:text-white mt-6 mb-2 scroll-mt-24">
           {domToReact(children as DOMNode[], parserOptions)}
         </h4>
       );
@@ -63,7 +79,7 @@ const parserOptions: HTMLReactParserOptions = {
     if (name === "a") {
       return (
         <a
-          href={attribs.href}
+          href={attribs.href?.startsWith("javascript:") ? "#" : attribs.href}
           {...(attribs.href?.startsWith("http") && !attribs.href?.includes("zigron.com")
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
@@ -131,6 +147,12 @@ const parserOptions: HTMLReactParserOptions = {
 
 export function WordPressContent({ html }: { html: string }) {
   const processed = preprocessShortcodes(html);
+  const sanitized = DOMPurify.sanitize(processed, {
+    ADD_TAGS: ["iframe"],
+    ADD_ATTR: ["target", "allow", "allowfullscreen", "frameborder"],
+    FORBID_TAGS: ["script", "style", "form", "input", "textarea", "select"],
+    FORBID_ATTR: ["onerror", "onload", "onclick", "onmouseover"],
+  });
 
-  return <div className="wp-content">{parse(processed, parserOptions)}</div>;
+  return <div className="wp-content">{parse(sanitized, parserOptions)}</div>;
 }

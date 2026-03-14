@@ -4,7 +4,9 @@ import { Header, Footer } from "@/components/layout";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { BlogPostCard, WordPressContent } from "@/components/blog";
+import { BlogPostCard, WordPressContent, TableOfContents } from "@/components/blog";
+import type { TocItem } from "@/components/blog";
+import { slugify } from "@/lib/slugify";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, User, ArrowLeft, ChevronRight } from "lucide-react";
@@ -23,6 +25,20 @@ import {
 } from "@/lib/wordpress";
 
 const OG_FALLBACK_IMAGE = "https://zigron.com/logo.svg";
+
+function extractHeadings(html: string): TocItem[] {
+  const regex = /<h([234])[^>]*>(.*?)<\/h[234]>/gi;
+  const headings: TocItem[] = [];
+  let match;
+  while ((match = regex.exec(html)) !== null) {
+    const level = parseInt(match[1], 10) as 2 | 3 | 4;
+    const text = match[2].replace(/<[^>]*>/g, "").trim();
+    if (text) {
+      headings.push({ id: slugify(text), text, level });
+    }
+  }
+  return headings;
+}
 
 // ---------------------------------------------------------------------------
 // Pre-render recent posts at build time for faster first crawl
@@ -109,6 +125,7 @@ export default async function BlogPostPage({
   const readTime = estimateReadTime(post.content.rendered);
   const wordCount = stripHtml(post.content.rendered).split(/\s+/).length;
   const primaryCategory = categories[0];
+  const headings = extractHeadings(post.content.rendered);
 
   // Fetch related posts from same category
   let relatedPosts: Awaited<ReturnType<typeof getPostsByCategory>>["data"] = [];
@@ -280,45 +297,61 @@ export default async function BlogPostPage({
 
         {/* Article Content */}
         <Section>
-          <Container size="narrow">
-            <article>
-              {/* Featured Image */}
-              {imageUrl && (
-                <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden mb-10 -mt-16 shadow-xl">
-                  <Image
-                    src={imageUrl}
-                    alt={imageAlt}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 720px"
-                    className="object-cover"
-                  />
-                </div>
-              )}
-
-              {/* WordPress HTML Content */}
-              <WordPressContent html={post.content.rendered} />
-
-              {/* Tags */}
-              {tags.length > 0 && (
-                <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-800">
-                  <h3 className="text-sm font-bold text-zigron-gray uppercase tracking-widest mb-3">
-                    Tags
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {tags.map((tag) => (
-                      <Link
-                        key={tag.id}
-                        href={`/blog/tag/${tag.slug}`}
-                        className="text-sm font-medium text-zigron-gray bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white px-3 py-1.5 rounded-full transition-colors"
-                      >
-                        {tag.name}
-                      </Link>
-                    ))}
+          <Container>
+            <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12 max-w-5xl mx-auto">
+              <article>
+                {/* Featured Image */}
+                {imageUrl && (
+                  <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden mb-10 -mt-16 shadow-xl">
+                    <Image
+                      src={imageUrl}
+                      alt={imageAlt}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 720px"
+                      className="object-cover"
+                    />
                   </div>
-                </div>
+                )}
+
+                {/* Mobile TOC — visible below lg */}
+                {headings.length >= 2 && (
+                  <div className="lg:hidden">
+                    <TableOfContents items={headings} />
+                  </div>
+                )}
+
+                {/* WordPress HTML Content */}
+                <WordPressContent html={post.content.rendered} />
+
+                {/* Tags */}
+                {tags.length > 0 && (
+                  <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-800">
+                    <h3 className="text-sm font-bold text-zigron-gray uppercase tracking-widest mb-3">
+                      Tags
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {tags.map((tag) => (
+                        <Link
+                          key={tag.id}
+                          href={`/blog/tag/${tag.slug}`}
+                          className="text-sm font-medium text-zigron-gray bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white px-3 py-1.5 rounded-full transition-colors"
+                        >
+                          {tag.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </article>
+
+              {/* Desktop TOC Sidebar — visible at lg+ */}
+              {headings.length >= 2 && (
+                <aside className="hidden lg:block">
+                  <TableOfContents items={headings} />
+                </aside>
               )}
-            </article>
+            </div>
           </Container>
         </Section>
 

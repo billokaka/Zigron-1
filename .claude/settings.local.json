@@ -29,7 +29,12 @@
       "Bash(mv \"Zigron Favicon.svg\" public/favicon.svg)",
       "Bash(rm \"Zigron SVG Logo.svg\")",
       "Bash(mkdir -p docs)",
-      "Bash(mv Zigron_Website_Requirement_Document.md docs/)"
+      "Bash(mv Zigron_Website_Requirement_Document.md docs/)",
+      "Bash(find '/c/Users/Zigron/Desktop/Zigron website - Copy/src' -name middleware.ts -o -path */api/*)",
+      "Bash(grep -r \"CORS\\\\|cors\\\\|Access-Control\\\\|middleware\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.ts --include=*.tsx)",
+      "Bash(grep -r \"proxy\\\\|middleware\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.ts --include=*.tsx)",
+      "Bash(grep -rn \"href.*encodeURI\\\\|redirect\\\\|next/navigation\" '/c/Users/Zigron/Desktop/Zigron website - Copy/src' --include=*.tsx --include=*.ts)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }
