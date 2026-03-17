@@ -94,7 +94,6 @@ const solutionsMegaMenu = {
       title: "Mobility & Consumer",
       titleHref: "/solutions",
       items: [
-        { label: "Fleet & Logistics", href: "/solutions/fleet-logistics", icon: Truck },
         { label: "Smart Home IoT", href: "/solutions/smart-home-automation", icon: Home },
       ],
     },
@@ -119,18 +118,10 @@ const industriesMegaMenu = {
   },
   columns: [
     {
-      title: "Operational Efficiency",
-      titleHref: "/industries",
-      items: [
-        { label: "Manufacturing", href: "/industries/manufacturing", icon: Factory },
-      ],
-    },
-    {
       title: "Asset Monitoring",
       titleHref: "/industries",
       items: [
         { label: "Energy & Utilities", href: "/industries/energy", icon: Zap },
-        { label: "Transportation", href: "/industries/transportation", icon: Truck },
       ],
     },
     {

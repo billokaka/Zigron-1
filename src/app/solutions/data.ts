@@ -109,24 +109,6 @@ export const solutions: Solution[] = [
     image: "/images/solutions/predictive-maintenance.jpg",
   },
   {
-    iconName: "truck",
-    title: "Fleet & Logistics",
-    slug: "fleet-logistics",
-    bestFor: "Supply Chain, Transport & Cold Chain",
-    category: "Mobility",
-    features: [
-      "Custom route optimization engines",
-      "Fuel consumption analytics platforms",
-      "Driver behavior scoring systems",
-    ],
-    metrics: [
-      { value: "20%", label: "Fuel Saved" },
-      { value: "Real-time", label: "Visibility" },
-    ],
-    tags: ["GPS/GNSS", "Cellular IoT", "React Native"],
-    image: "/images/solutions/fleet-logistics.jpg",
-  },
-  {
     iconName: "home",
     title: "Smart Home & Consumer IoT",
     slug: "smart-home-automation",

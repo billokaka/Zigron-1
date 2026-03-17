@@ -5,7 +5,6 @@ const footerLinks = {
   solutions: [
     { label: "Smart Energy & Solar", href: "/solutions/smart-energy-solar" },
     { label: "Predictive Maintenance", href: "/solutions/predictive-maintenance" },
-    { label: "Fleet & Logistics", href: "/solutions/fleet-logistics" },
   ],
   services: [
     { label: "IoT Services", href: "/services/iot" },
@@ -16,9 +15,7 @@ const footerLinks = {
   ],
   industries: [
     { label: "Energy & Utilities", href: "/industries/energy" },
-    { label: "Manufacturing", href: "/industries/manufacturing" },
     { label: "Smart Home", href: "/industries/smart-home" },
-    { label: "Transportation", href: "/industries/transportation" },
     { label: "Healthcare", href: "/industries/healthcare" },
   ],
   company: [

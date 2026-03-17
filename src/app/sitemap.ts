@@ -42,7 +42,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/solutions",
     "/solutions/smart-energy-solar",
     "/solutions/smart-home-automation",
-    "/solutions/fleet-logistics",
     "/solutions/medical-iot-platform",
     "/solutions/predictive-maintenance",
   ];
@@ -51,9 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/industries",
     "/industries/energy",
     "/industries/healthcare",
-    "/industries/manufacturing",
     "/industries/smart-home",
-    "/industries/transportation",
   ];
 
   const workPages = [

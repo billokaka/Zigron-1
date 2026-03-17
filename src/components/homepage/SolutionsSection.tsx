@@ -25,31 +25,21 @@ const solutions = [
     },
     {
         id: 3,
-        industry: "Transportation",
-        title: "Fleet & Logistics",
-        promise: "Turn location + sensor data into live visibility and smarter operations.",
-        chips: ["Real-time tracking", "Route & utilization insights", "Automated exceptions"],
-        route: "/solutions/fleet-logistics",
-        colSpan: "lg:col-span-2", // 33% of 6-col grid in next row? Let's use standard grid. 
-        // Wait, the spec says "Row 1: 2 tiles (60/40), Row 2: 3 tiles (equal thirds)"
-    },
-    {
-        id: 4,
         industry: "Smart Home",
         title: "Smart Home Automation",
         promise: "Reliable device performance with secure connectivity, automation, and testing at scale.",
         chips: ["Device reliability", "Secure integrations", "Automated QA & releases"],
         route: "/solutions/smart-home-automation",
-        colSpan: "lg:col-span-2",
+        colSpan: "lg:col-span-3",
     },
     {
-        id: 5,
+        id: 4,
         industry: "Healthcare",
         title: "Medical IoT Platform",
         promise: "Build compliant, secure data flows and intelligence for connected care systems.",
         chips: ["Secure data pipelines", "Monitoring & alerts", "Audit-ready operations"],
         route: "/solutions/medical-iot-platform",
-        colSpan: "lg:col-span-2",
+        colSpan: "lg:col-span-3",
     },
 ];
 
@@ -154,8 +144,8 @@ export function SolutionsSection() {
                         </div>
                     </div>
 
-                    {/* Tile 3: 33% */}
-                    <div className="sol-tile opacity-0 lg:col-span-2 bg-white border border-[#CCCCCC] rounded-[16px] overflow-hidden group hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(192,39,45,0.12)] hover:border-zigron-red transition-all duration-250 flex flex-col">
+                    {/* Tile 3: 50% */}
+                    <div className="sol-tile opacity-0 lg:col-span-3 bg-white border border-[#CCCCCC] rounded-[16px] overflow-hidden group hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(192,39,45,0.12)] hover:border-zigron-red transition-all duration-250 flex flex-col">
                         <div className="h-[160px] bg-zigron-light relative overflow-hidden flex items-center justify-center">
                             <span className="absolute top-4 left-4 bg-white border border-zigron-red text-zigron-red font-mono text-[11px] font-medium uppercase px-2 py-0.5 rounded-[4px] z-10">
                                 {solutions[2].industry}
@@ -178,8 +168,8 @@ export function SolutionsSection() {
                         </div>
                     </div>
 
-                    {/* Tile 4: 33% */}
-                    <div className="sol-tile opacity-0 lg:col-span-2 bg-white border border-[#CCCCCC] rounded-[16px] overflow-hidden group hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(192,39,45,0.12)] hover:border-zigron-red transition-all duration-250 flex flex-col">
+                    {/* Tile 4: 50% */}
+                    <div className="sol-tile opacity-0 lg:col-span-3 bg-white border border-[#CCCCCC] rounded-[16px] overflow-hidden group hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(192,39,45,0.12)] hover:border-zigron-red transition-all duration-250 flex flex-col">
                         <div className="h-[160px] bg-zigron-light relative overflow-hidden flex items-center justify-center">
                             <span className="absolute top-4 left-4 bg-white border border-zigron-red text-zigron-red font-mono text-[11px] font-medium uppercase px-2 py-0.5 rounded-[4px] z-10">
                                 {solutions[3].industry}
@@ -197,30 +187,6 @@ export function SolutionsSection() {
                                 ))}
                             </div>
                             <a href={solutions[3].route} className="font-poppins font-semibold text-[14px] text-zigron-red group-hover:underline flex items-center">
-                                Explore solution <ArrowRight className="w-4 h-4 ml-1" />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Tile 5: 33% */}
-                    <div className="sol-tile opacity-0 lg:col-span-2 bg-white border border-[#CCCCCC] rounded-[16px] overflow-hidden group hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(192,39,45,0.12)] hover:border-zigron-red transition-all duration-250 flex flex-col">
-                        <div className="h-[160px] bg-zigron-light relative overflow-hidden flex items-center justify-center">
-                            <span className="absolute top-4 left-4 bg-white border border-zigron-red text-zigron-red font-mono text-[11px] font-medium uppercase px-2 py-0.5 rounded-[4px] z-10">
-                                {solutions[4].industry}
-                            </span>
-                            <TileFiveVisual />
-                        </div>
-                        <div className="p-7 flex flex-col flex-grow">
-                            <h3 className="font-poppins font-bold text-[22px] text-zigron-black mb-2">{solutions[4].title}</h3>
-                            <p className="font-poppins text-[15px] text-zigron-gray mb-6 flex-grow">{solutions[4].promise}</p>
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                {solutions[4].chips.map((chip, i) => (
-                                    <span key={i} className="bg-zigron-light border border-[#CCCCCC] font-poppins font-medium text-[12px] text-zigron-gray px-2.5 py-1 rounded-[4px]">
-                                        {chip}
-                                    </span>
-                                ))}
-                            </div>
-                            <a href={solutions[4].route} className="font-poppins font-semibold text-[14px] text-zigron-red group-hover:underline flex items-center">
                                 Explore solution <ArrowRight className="w-4 h-4 ml-1" />
                             </a>
                         </div>
@@ -280,29 +246,10 @@ function TileTwoVisual() {
 
 function TileThreeVisual() {
     return (
-        <div className="relative w-full h-full">
-            {/* Map Dots */}
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#9ca3af 2px, transparent 2px)', backgroundSize: '16px 16px' }} />
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M20,80 Q40,40 80,30" fill="none" stroke="#C0272D" strokeWidth="2" strokeDasharray="4 4" className="group-hover:animate-[dashFlow_1s_linear_infinite]" vectorEffect="non-scaling-stroke" />
-                <circle cx="20" cy="80" r="4" fill="#1A1A1A" />
-                <circle cx="50" cy="50" r="4" fill="#1A1A1A" className="group-hover:fill-zigron-red transition-colors" />
-                <circle cx="80" cy="30" r="4" fill="#10B981" />
-            </svg>
-            <div className="absolute top-[40%] left-[55%] bg-zigron-red text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm opacity-100 lg:opacity-0 group-hover:-translate-x-2 group-hover:opacity-100 transition-all duration-300">
-                DELAY RISK
-            </div>
-        </div>
-    );
-}
-
-function TileFourVisual() {
-    return (
         <div className="relative w-full h-full flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-300">
             <div className="w-12 h-12 bg-white rounded-full shadow-sm border-[2px] border-[#CCC] flex items-center justify-center z-10 group-hover:border-[#10B981] transition-colors">
                 <div className="w-4 h-4 bg-zigron-black rounded-full" />
             </div>
-            {/* Connecting lines */}
             <div className="absolute inset-0 flex justify-center items-center z-0">
                 <div className="w-[100px] h-[2px] bg-[#CCC] rotate-45 group-hover:bg-[#10B981] transition-colors" />
                 <div className="w-[100px] h-[2px] bg-[#CCC] -rotate-45 group-hover:bg-[#10B981] transition-colors" />
@@ -312,12 +259,12 @@ function TileFourVisual() {
             <div className="absolute bottom-4 right-4 w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div className="h-full bg-[#10B981] w-[30%] lg:w-[30%] group-hover:w-[100%] transition-all duration-1000 ease-out" />
             </div>
-            <span className="absolute bottom-[28px] right-4 text-[9px] font-mono font-bold text-[#10B981] opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity delay-300">RELEASED</span>
+            <span className="absolute bottom-[28px] right-4 text-[9px] font-mono font-bold text-[#10B981] opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity delay-300">CONNECTED</span>
         </div>
     );
 }
 
-function TileFiveVisual() {
+function TileFourVisual() {
     return (
         <div className="relative w-full h-full p-6 flex flex-col justify-center gap-2">
             <div className="flex gap-2 items-center w-[80%] opacity-100 transition-opacity">

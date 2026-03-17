@@ -85,20 +85,6 @@ export interface Industry {
 
 export const industries: Industry[] = [
   {
-    iconName: "factory",
-    title: "Manufacturing",
-    slug: "manufacturing",
-    shortDescription: "Reduce downtime, improve OEE, and enable predictive maintenance.",
-    category: "Operational Efficiency",
-    capabilities: [
-      "Digital Twin implementation",
-      "HMI & SCADA Modernization",
-      "Industrial IoT Gateways",
-    ],
-    relatedSolutions: ["IIoT Solutions", "Predictive Maintenance"],
-    caseStudy: { title: "Industrial OEM", result: "40% reduction in downtime" },
-  },
-  {
     iconName: "zap",
     title: "Energy",
     slug: "energy",
@@ -139,20 +125,6 @@ export const industries: Industry[] = [
     ],
     relatedSolutions: ["Consumer IoT", "Home Automation"],
     caseStudy: { title: "Abode Security", result: "99.99% uptime achieved" },
-  },
-  {
-    iconName: "truck",
-    title: "Transportation",
-    slug: "transportation",
-    shortDescription: "Fleet tracking, logistics optimization, and cold chain monitoring.",
-    category: "Asset Monitoring",
-    capabilities: [
-      "Fleet Telematics",
-      "Route Optimization AI",
-      "Cold Chain Sensors",
-    ],
-    relatedSolutions: ["Logistics", "Asset Tracking"],
-    caseStudy: { title: "Logistics Platform", result: "20% fuel savings" },
   },
   {
     iconName: "building2",
