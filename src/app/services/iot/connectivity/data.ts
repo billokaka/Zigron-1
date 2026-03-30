@@ -325,6 +325,8 @@ export const techStack: TechCategory[] = [
 // ============================================================================
 
 export interface CaseStudy {
+    image: string;
+    category: string;
     title: string;
     services: string;
     result: string;
@@ -332,23 +334,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-    {
-        title: "Connected EV Chargers",
+    { image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80", category: "Connectivity", title: "Connected EV Chargers",
         services: "LTE-M Integration",
         result: "99.99% uptime across 50 states.",
-        href: "/work/ev-charging"
+        href: "/work"
     },
-    {
-        title: "Smart Agriculture Mesh",
+    { image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80", category: "IoT", title: "Smart Agriculture Mesh",
         services: "LoRaWAN Gateway",
         result: "Covered 5,000 acres with 1 gateway.",
-        href: "/work/smart-ag"
+        href: "/work"
     },
-    {
-        title: "Maritime Asset Tracking",
+    { image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80", category: "Firmware", title: "Maritime Asset Tracking",
         services: "Satellite/Cellular Hybrid",
         result: "Seamless global tracking.",
-        href: "/work/maritime-tracking"
+        href: "/work"
     }
 ];
 

@@ -413,6 +413,8 @@ export const techStack: TechCategory[] = [
 // ============================================================================
 
 export interface CaseStudy {
+  image: string;
+  category: string;
   title: string;
   client: string;
   result: string;
@@ -420,14 +422,12 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-  {
-    title: "TerraSmart Solar Installation Tracking",
+  { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Installation Tracking",
     client: "TerraSmart",
     result: "30% efficiency boost with automated IoT ground sensors.",
     href: "/work/terrasmart-solar",
   },
-  {
-    title: "TerraTrak AI-Powered Solar Tracking",
+  { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraTrak AI-Powered Solar Tracking",
     client: "TerraSmart",
     result: "+12% energy generation with ML-optimized tracking algorithms.",
     href: "/work/terratrak-ai",

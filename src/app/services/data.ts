@@ -6,7 +6,9 @@
 // ============================================================================
 
 export const pageMetadata = {
-  title: "Services Hub | Zigron",
+  image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+        category: "Technology",
+        title: "Services Hub | Zigron",
   description:
     "End-to-end engineering services across IoT, AI, and core engineering disciplines. From device to cloud to dashboard.",
   keywords: [
@@ -63,7 +65,7 @@ export interface ServiceVertical {
   slug: string;
   description: string;
   features: string[];
-  color: "blue" | "purple" | "orange";
+  color: "blue" | "purple" | "orange" | "teal";
 }
 
 export const serviceVerticals: ServiceVertical[] = [
@@ -111,6 +113,21 @@ export const serviceVerticals: ServiceVertical[] = [
       "Project Management",
     ],
     color: "orange",
+  },
+  {
+    iconName: "shield",
+    title: "Cybersecurity",
+    slug: "cybersecurity",
+    description:
+      "Protect your devices, cloud infrastructure, and data pipelines with security built into every layer—from IoT endpoints to CI/CD.",
+    features: [
+      "IoT Security & Device Protection",
+      "Cloud & Infrastructure Security",
+      "DevSecOps & Secure CI/CD",
+      "Identity & Access Management",
+      "Vulnerability Assessment & Pen Testing",
+    ],
+    color: "teal",
   },
 ];
 
@@ -174,6 +191,7 @@ export const engagementModels: EngagementModel[] = [
 // ============================================================================
 
 export interface CaseStudy {
+  image: string;
   title: string;
   category: string;
   outcome: string;
@@ -182,18 +200,21 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
     title: "Abode Smart Home Security",
     category: "IoT Services",
     outcome: "99.99% uptime & 50% infrastructure cost reduction",
     href: "/work/abode-smart-home",
   },
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "TerraSmart Solar OEM",
     category: "IoT + Engineering",
     outcome: "30% faster field deployment speed",
     href: "/work/terrasmart-solar",
   },
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "TerraTrak AI Solar Tracking",
     category: "AI + IoT",
     outcome: "+12% energy generation boost",

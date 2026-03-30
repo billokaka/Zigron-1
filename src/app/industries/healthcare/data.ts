@@ -58,8 +58,8 @@ export const securityFeatures: SecurityFeature[] = [
 
 export interface CaseStudy { image: string; category: string; title: string; challenge: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { image: "/images/case-studies/remote-monitoring.jpg", category: "Remote Monitoring", title: "Remote Cardiac Monitoring Platform", challenge: "High alert fatigue and missed critical cardiac events.", result: "68% faster response, 85% alert precision.", href: "/work" },
-    { image: "/images/case-studies/wearable-platform.jpg", category: "Device Platform", title: "Multi-Device Wellness Platform", challenge: "Fragmented data from 12 wearable device types.", result: "Unified patient view with 99.9% data completeness.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Consumer IoT", title: "Abode Smart Home Platform", challenge: "Ensuring 99.99% uptime for safety-critical connected devices.", result: "99.99% uptime & 50% infrastructure cost reduction.", href: "/work/abode-smart-home" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Monitoring", challenge: "Monitoring hundreds of distributed solar assets in real time.", result: "30% faster field deployment across 500+ sites.", href: "/work/terrasmart-solar" },
 ];
 
 export interface ImplementationPattern { number: number; title: string; description: string; features: string[]; featured: boolean; }

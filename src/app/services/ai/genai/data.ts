@@ -228,6 +228,8 @@ export const techStack: TechCategory[] = [
 ];
 
 export interface CaseStudy {
+    image: string;
+    category: string;
     title: string;
     services: string;
     result: string;
@@ -235,23 +237,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-    {
-        title: "Enterprise Knowledge Copilot",
-        services: "RAG Pipeline, Guardrails, Evaluation",
-        result: "60% faster support resolution with zero hallucination incidents.",
-        href: "/work/document-ai",
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Smart Home AI Assistant",
+        services: "RAG Pipeline, Guardrails, Device Integration",
+        result: "99.99% uptime with AI-driven automation across 300K+ devices.",
+        href: "/work/abode-smart-home",
     },
-    {
-        title: "AI-Powered Document Processing",
-        services: "LLM Extraction, Validation Pipeline",
-        result: "90% automation rate for document classification and extraction.",
-        href: "/work/document-ai",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Intelligence",
+        services: "GenAI Reports, Data Summarization",
+        result: "30% faster field deployment with AI-generated site insights.",
+        href: "/work/terrasmart-solar",
     },
-    {
-        title: "Internal Ops Automation Agent",
-        services: "Tool Calling, Approval Workflows",
-        result: "Automated 40% of repetitive ops tasks with human-in-loop safety.",
-        href: "/work/industrial-predictive",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Optimization Engine",
+        services: "ML-Driven Automation, Intelligent Alerts",
+        result: "+12% energy generation through AI-optimized tracking.",
+        href: "/work/terratrak-ai",
     },
 ];
 

@@ -90,11 +90,11 @@ export const techStack: TechCategory[] = [
     { category: "Mobile & Frontend", technologies: ["React Native", "Swift", "Kotlin", "Flutter", "WebSocket"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "Abode Smart Home Security", services: "Platform Development, Mobile App, OTA Pipeline", result: "94% onboarding completion, 60% fewer support calls.", href: "/work" },
-    { title: "Connected Appliance Platform", services: "Matter Integration, Unified App", result: "3x user engagement with unified experience.", href: "/work" },
-    { title: "Smart Lighting OTA System", services: "Firmware Pipeline, Canary Deployments", result: "Zero bricked devices across 50K+ OTA updates.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Consumer IoT", title: "Abode Smart Home Security", services: "Platform Development, Mobile App, OTA Pipeline", result: "99.99% uptime & 50% infrastructure cost reduction.", href: "/work/abode-smart-home" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Platform", services: "IoT Cloud Platform, Device Management", result: "30% faster field deployment across 500+ sites.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Optimization", services: "Edge AI, Intelligent Automation", result: "+12% energy generation through AI-driven tracking.", href: "/work/terratrak-ai" },
 ];
 
 export interface FAQ { question: string; answer: string; }

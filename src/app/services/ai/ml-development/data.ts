@@ -322,6 +322,8 @@ export const differentiators: Differentiator[] = [
 // ============================================================================
 
 export interface CaseStudy {
+  image: string;
+  category: string;
   title: string;
   services: string;
   result: string;
@@ -329,23 +331,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-  {
-    title: "AI-Powered Solar Tracking Optimization",
+  { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "AI-Powered Solar Tracking Optimization",
     services: "Edge ML, Computer Vision",
     result: "+12% energy generation through ML-optimized sun tracking.",
     href: "/work/terratrak-ai",
   },
-  {
-    title: "Manufacturing Visual Inspection",
-    services: "Computer Vision, Edge AI",
-    result: "99.5% defect detection with 10x faster inspection.",
-    href: "/work/manufacturing-cv",
+  { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar ML Platform",
+    services: "Predictive Models, Data Pipelines",
+    result: "30% faster field deployment with ML-driven site analysis.",
+    href: "/work/terrasmart-solar",
   },
-  {
-    title: "Document Intelligence Platform",
-    services: "NLP, OCR, Classification",
-    result: "80% reduction in document processing time.",
-    href: "/work/document-ai",
+  { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Smart Home Intelligence",
+    services: "Anomaly Detection, Device ML Models",
+    result: "99.99% uptime with ML-powered device health monitoring.",
+    href: "/work/abode-smart-home",
   },
 ];
 

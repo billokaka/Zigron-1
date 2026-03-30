@@ -2,6 +2,7 @@
 // Enterprise IoT and AI solutions for the energy sector
 
 import { Metadata } from "next";
+import Image from "next/image";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, Container, Section } from "@/components/ui";
 import {
@@ -445,9 +446,10 @@ export default function SmartEnergyIndustryPage() {
                   key={study.title}
                   className="bg-white dark:bg-background-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700 flex flex-col group"
                 >
-                  <div className="h-56 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-600 to-gray-800 transform group-hover:scale-105 transition-transform duration-500"></div>
-                    <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 text-xs font-bold rounded uppercase tracking-wider">
+                  <div className="h-56 relative overflow-hidden">
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute top-4 left-4 bg-white/95 dark:bg-black/80 px-3 py-1 text-xs font-bold rounded uppercase tracking-wider text-black dark:text-white">
                       {study.category}
                     </div>
                   </div>

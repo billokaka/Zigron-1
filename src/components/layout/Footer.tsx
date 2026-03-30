@@ -10,8 +10,8 @@ const footerLinks = {
     { label: "IoT Services", href: "/services/iot" },
     { label: "AI & Data Services", href: "/services/ai" },
     { label: "Engineering Services", href: "/services/engineering" },
+    { label: "Cybersecurity", href: "/services/cybersecurity" },
     { label: "Device & Firmware", href: "/services/iot/device-firmware" },
-    { label: "Platform & Cloud", href: "/services/iot/platform-cloud" },
   ],
   industries: [
     { label: "Energy & Utilities", href: "/industries/energy" },

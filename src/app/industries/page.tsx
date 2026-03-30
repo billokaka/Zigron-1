@@ -2,6 +2,7 @@
 // Industry-specific IoT, AI, and engineering solutions
 
 import { Metadata } from "next";
+import Image from "next/image";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, Container, Section } from "@/components/ui";
 import {
@@ -335,8 +336,9 @@ export default function IndustriesPage() {
                   key={study.title}
                   className="group flex flex-col rounded-2xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="h-56 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 group-hover:scale-105 transition-transform duration-700"></div>
+                  <div className="h-56 relative overflow-hidden">
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
                   <div className="p-8 flex flex-col flex-grow relative z-10 bg-white dark:bg-gray-900">
                     <div className="mb-4">

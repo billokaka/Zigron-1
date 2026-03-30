@@ -75,11 +75,11 @@ export const techStack: TechCategory[] = [
     { category: "Data & Infra", technologies: ["Apache Spark", "dbt", "Snowflake", "BigQuery", "TimescaleDB", "InfluxDB"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "Solar Energy Yield Prediction", services: "Time-Series Forecasting, Dashboards", result: "+15% forecast accuracy enabling better grid commitments.", href: "/work/terrasmart-solar" },
-    { title: "Industrial Predictive Maintenance", services: "Anomaly Detection, Alert System", result: "40% reduction in unplanned downtime via early warnings.", href: "/work/industrial-predictive" },
-    { title: "TerraTrak AI Analytics", services: "ML Analytics, Performance Dashboards", result: "+12% energy generation through data-driven optimization.", href: "/work/terratrak-ai" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "Solar Energy Yield Prediction", services: "Time-Series Forecasting, Dashboards", result: "+15% forecast accuracy enabling better grid commitments.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Smart Home Analytics", services: "Device Telemetry Dashboards, Anomaly Detection", result: "99.99% uptime with real-time analytics across 300K+ devices.", href: "/work/abode-smart-home" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraTrak AI Analytics", services: "ML Analytics, Performance Dashboards", result: "+12% energy generation through data-driven optimization.", href: "/work/terratrak-ai" },
 ];
 
 export interface FAQ { question: string; answer: string; }

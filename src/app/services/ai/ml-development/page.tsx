@@ -2,6 +2,7 @@
 // Strictly aligned with IoT Strategy Consulting page layout pattern
 
 import React from "react";
+import Image from "next/image";
 import { Metadata } from "next";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, Container, Section } from "@/components/ui";
@@ -435,7 +436,8 @@ export default function MLDevelopmentPage() {
                   className="bg-white dark:bg-surface-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 flex flex-col group"
                 >
                   <div className="h-52 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-800 group-hover:scale-105 transition-transform duration-500"></div>
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="absolute top-4 left-4 bg-white/95 dark:bg-black/80 px-3 py-1 text-xs font-bold rounded uppercase tracking-wider">
                       ML Project
                     </div>

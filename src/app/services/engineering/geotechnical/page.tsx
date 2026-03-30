@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Metadata } from "next";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, Container, Section } from "@/components/ui";
@@ -125,7 +126,19 @@ export default function GeotechnicalEngineeringPage() {
                         <div className="grid md:grid-cols-3 gap-8">
                             {caseStudies.map((s) => (
                                 <div key={s.title} className="bg-white dark:bg-surface-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 flex flex-col group">
-                                    <div className="h-52 bg-gray-200 dark:bg-gray-700 relative overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-gray-600 to-gray-800 group-hover:scale-105 transition-transform duration-500"></div><div className="absolute top-4 left-4 bg-white/95 dark:bg-black/80 px-3 py-1 text-xs font-bold rounded uppercase tracking-wider">Geotech</div></div>
+                                    <div className="h-52 relative overflow-hidden">
+                                        <Image
+                                            src={s.image}
+                                            alt={s.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                        <div className="absolute top-4 left-4 bg-white/95 dark:bg-black/80 px-3 py-1 text-xs font-bold rounded uppercase tracking-wider text-black dark:text-white">
+                                            {s.category}
+                                        </div>
+                                    </div>
                                     <div className="p-6 flex-1 flex flex-col"><h3 className="font-bold text-lg mb-3 text-black dark:text-white leading-tight">{s.title}</h3><div className="text-xs text-gray-500 space-y-2 mb-6 flex-1 border-t border-gray-100 dark:border-gray-700 pt-3"><p><strong className="text-gray-800 dark:text-gray-300">Services:</strong> {s.services}</p><p className="text-green-600 dark:text-green-400 font-semibold"><strong className="text-gray-800 dark:text-gray-300">Result:</strong> {s.result}</p></div><a href={s.href} className="text-primary font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Read case study<ArrowRight className="w-3.5 h-3.5" /></a></div>
                                 </div>))}
                         </div>

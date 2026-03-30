@@ -75,11 +75,11 @@ export const techStack: TechCategory[] = [
     { category: "Standards & Codes", technologies: ["IBC 2024", "AISC 360-22", "ACI 318-25", "ASCE 7-22", "AWS D1.1"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "TerraSmart Solar Foundations", services: "Foundation Design, FEA Optimization", result: "18% steel reduction across 200+ tracker foundations.", href: "/work/terrasmart-solar" },
-    { title: "Industrial Seismic Retrofit", services: "Structural Assessment, Strengthening", result: "Full seismic compliance with 60% less disruption.", href: "/work/industrial-predictive" },
-    { title: "Wind Farm Foundations", services: "Soil-Structure Analysis, Foundation Design", result: "On-schedule delivery with 15% material savings.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Foundations", services: "Foundation Design, FEA Optimization", result: "18% steel reduction across 200+ tracker foundations.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80", category: "Structural", title: "Industrial Seismic Retrofit", services: "Structural Assessment, Strengthening", result: "Full seismic compliance with 60% less disruption.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80", category: "Structural", title: "Wind Farm Foundations", services: "Soil-Structure Analysis, Foundation Design", result: "On-schedule delivery with 15% material savings.", href: "/work/terrasmart-solar" },
 ];
 
 export interface FAQ { question: string; answer: string; }

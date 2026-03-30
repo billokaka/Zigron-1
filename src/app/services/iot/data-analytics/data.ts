@@ -298,6 +298,8 @@ export const crossLinks = {
 // ============================================================================
 
 export interface CaseStudy {
+    image: string;
+    category: string;
     title: string;
     services: string;
     result: string;
@@ -305,23 +307,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-    {
-        title: "TerraSmart Solar Monitoring",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Monitoring",
         services: "Telemetry Pipeline, KPI Dashboards",
         result: "Real-time monitoring across 500+ solar installations.",
         href: "/work/terrasmart-solar",
     },
-    {
-        title: "Abode Smart Home Security",
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Smart Home Security",
         services: "Device Analytics, Alerting Logic",
         result: "300,000+ devices monitored with 99.99% data freshness.",
         href: "/work/abode-smart-home",
     },
-    {
-        title: "Industrial Predictive Maintenance",
-        services: "Anomaly Detection, Data Engineering",
-        result: "40% reduction in unplanned equipment downtime.",
-        href: "/work/industrial-predictive",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Performance Analytics",
+        services: "ML Analytics, Energy Optimization Dashboards",
+        result: "+12% energy generation through data-driven optimization.",
+        href: "/work/terratrak-ai",
     },
 ];
 

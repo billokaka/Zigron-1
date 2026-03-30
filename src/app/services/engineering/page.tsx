@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, SectionHeader, Container, Section } from "@/components/ui";
 import {
@@ -89,6 +90,7 @@ const industries = [
 
 const caseStudies = [
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "TerraSmart Solar Farm Engineering",
     category: "Renewable Energy",
     problem: "Complex terrain required custom foundation solutions.",
@@ -97,20 +99,22 @@ const caseStudies = [
     href: "/work/terrasmart-solar",
   },
   {
+    image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80",
     title: "Industrial Facility Expansion",
     category: "Manufacturing",
     problem: "Tight timeline for production line expansion.",
     approach: "Parallel engineering streams with accelerated permitting.",
     outcome: "6-week design-to-permit cycle vs. industry 12-week average.",
-    href: "/work/industrial-expansion",
+    href: "/work",
   },
   {
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
     title: "Multi-Site Rollout Engineering",
     category: "Commercial",
     problem: "50+ locations needed standardized but site-adapted designs.",
     approach: "Template-based design system with automated customization.",
     outcome: "80% reduction in per-site engineering time.",
-    href: "/work/multi-site-rollout",
+    href: "/work",
   },
 ];
 
@@ -392,10 +396,9 @@ export default function EngineeringServicesPage() {
                   key={study.title}
                   className="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-800 flex flex-col group hover:shadow-lg transition-all"
                 >
-                  <div className="h-56 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-300 to-orange-500 dark:from-orange-700 dark:to-orange-900 flex items-center justify-center">
-                      <Compass className="w-12 h-12 text-white/60" />
-                    </div>
+                  <div className="h-56 relative overflow-hidden">
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="absolute top-4 left-4 bg-black/80 backdrop-blur text-white px-3 py-1 text-[10px] font-bold rounded uppercase tracking-wide">
                       {study.category}
                     </div>

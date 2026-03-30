@@ -1,22 +1,26 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)",
-      "Bash(npm install *)",
-      "Bash(npm uninstall *)",
-      "Bash(npm audit *)",
-      "Bash(npm ls *)",
-      "Bash(git status *)",
-      "Bash(git diff *)",
-      "Bash(git log *)",
-      "Bash(git branch *)",
-      "Bash(curl -s *)",
-      "Bash(ls *)",
-      "Bash(mkdir *)",
-      "Bash(mv *)",
-      "Read",
-      "Grep",
-      "Glob"
+      "Bash(*)",
+      "WebFetch(*)",
+      "Edit(*)",
+      "Read(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf /)",
+      "Bash(sudo rm:*)",
+      "Bash(mkfs:*)",
+      "Bash(dd if=:*)",
+      "Bash(:(){ :|:& };:)",
+      "Bash(chmod -R 777 /*)",
+      "Bash(curl * | bash)",
+      "Bash(wget * | bash)",
+      "Bash(npm publish:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(shutdown:*)",
+      "Bash(reboot:*)"
     ]
   }
 }

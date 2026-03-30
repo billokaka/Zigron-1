@@ -58,8 +58,8 @@ export const securityFeatures: SecurityFeature[] = [
 
 export interface CaseStudy { image: string; category: string; title: string; challenge: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { image: "/images/case-studies/abode-security.jpg", category: "Smart Security", title: "Abode Smart Home Security", challenge: "High onboarding abandonment and frequent support calls.", result: "94% onboarding completion, 60% fewer support calls.", href: "/work" },
-    { image: "/images/case-studies/smart-lighting.jpg", category: "OTA Pipeline", title: "Smart Lighting OTA System", challenge: "OTA failures bricking devices with no recovery mechanism.", result: "Zero bricked devices across 50K+ OTA deployments.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Consumer IoT", title: "Abode Smart Home Security", challenge: "Scaling a connected home platform with 99.99% uptime requirements.", result: "99.99% uptime & 50% infrastructure cost reduction.", href: "/work/abode-smart-home" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Platform", challenge: "Managing hundreds of distributed IoT devices across field sites.", result: "30% faster field deployment across 500+ installations.", href: "/work/terrasmart-solar" },
 ];
 
 export interface ImplementationPattern { number: number; title: string; description: string; features: string[]; featured: boolean; }

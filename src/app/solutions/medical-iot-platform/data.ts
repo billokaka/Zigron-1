@@ -91,11 +91,11 @@ export const techStack: TechCategory[] = [
     { category: "Cloud & Data", technologies: ["Azure Health Data Services", "AWS HealthLake", "PostgreSQL", "TimescaleDB", "Kafka"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "Remote Cardiac Monitoring", services: "Alert Engine, Clinician Routing", result: "68% faster critical event response.", href: "/work" },
-    { title: "Multi-Device Wellness Platform", services: "Data Unification, Patient Dashboards", result: "Unified view across 12 device types.", href: "/work" },
-    { title: "Clinical Trial Data Pipeline", services: "Automated Collection, Audit Trails", result: "75% faster data collection.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Consumer IoT", title: "Abode Smart Home Secure Platform", services: "Secure Data Pipelines, Device Monitoring", result: "99.99% uptime & 50% infrastructure cost reduction.", href: "/work/abode-smart-home" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Telemetry Platform", services: "IoT Data Ingestion, Real-Time Monitoring", result: "30% faster field deployment across 500+ sites.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Analytics Platform", services: "ML Analytics, Performance Optimization", result: "+12% energy generation through AI-driven insights.", href: "/work/terratrak-ai" },
 ];
 
 export interface FAQ { question: string; answer: string; }

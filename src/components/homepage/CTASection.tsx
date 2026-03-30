@@ -55,7 +55,7 @@ export function CTASection() {
                                 </div>
                                 <div>
                                     <p className="font-poppins font-semibold text-[14px] text-zigron-black">Direct Access</p>
-                                    <a href="mailto:contact@zigron.com" className="font-poppins text-[14px] text-zigron-red hover:underline">contact@zigron.com</a>
+                                    <a href="mailto:sales@zigron.com" className="font-poppins text-[14px] text-zigron-red hover:underline">sales@zigron.com</a>
                                 </div>
                             </div>
                         </div>

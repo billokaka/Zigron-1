@@ -361,7 +361,7 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    image: "/images/case-studies/terrasmart.jpg",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     category: "Solar",
     title: "TerraSmart Solar Installation Tracking",
     challenge: "Manual tracking caused delays in deploying massive solar fields.",
@@ -369,7 +369,7 @@ export const caseStudies: CaseStudy[] = [
     href: "/work/terrasmart-solar",
   },
   {
-    image: "/images/case-studies/terratrak.jpg",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     category: "AI Optimization",
     title: "TerraTrak AI Solar Tracking",
     challenge: "Static algorithms failed to optimize panel angles for variable weather.",

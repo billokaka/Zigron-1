@@ -330,6 +330,8 @@ export const techStack: TechCategory[] = [
 // ============================================================================
 
 export interface CaseStudy {
+    image: string;
+    category: string;
     title: string;
     services: string;
     result: string;
@@ -337,23 +339,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-    {
-        title: "Connected Asset Tracker",
+    { image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80", category: "Connectivity", title: "Connected Asset Tracker",
         services: "PCB Design, Firmware",
         result: "5-year battery life achieved.",
-        href: "/work/asset-tracker"
+        href: "/work"
     },
-    {
-        title: "Smart Home Controller",
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Smart Home Controller",
         services: "Matter Integration",
         result: "First to market with Matter 1.0.",
-        href: "/work/smart-home"
+        href: "/work"
     },
-    {
-        title: "Biometric Access Control",
+    { image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80", category: "Firmware", title: "Biometric Access Control",
         services: "Secure Boot, Fingerprint",
         result: "Hardware penetration test passed.",
-        href: "/work/biometric-access"
+        href: "/work"
     }
 ];
 

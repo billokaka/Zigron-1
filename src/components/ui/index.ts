@@ -4,3 +4,5 @@ export { Card, CardHeader, CardContent, CardFooter } from "./Card";
 export { Container } from "./Container";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
+export { CaseStudyCard } from "./CaseStudyCard";
+export type { CaseStudyCardProps } from "./CaseStudyCard";

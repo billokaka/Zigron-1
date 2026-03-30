@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, SectionHeader, Container, Section } from "@/components/ui";
 import {
@@ -87,6 +88,7 @@ const solutions = [
 
 const caseStudies = [
   {
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
     title: "Scaling Abode's Smart Security to Millions",
     category: "Consumer IoT",
     problem: "Legacy backend couldn't handle device spike.",
@@ -95,6 +97,7 @@ const caseStudies = [
     href: "/work/abode-smart-home",
   },
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "Automating TerraSmart Solar Installation",
     category: "Industrial IoT",
     problem: "Manual site surveys were slow and error-prone.",
@@ -103,6 +106,7 @@ const caseStudies = [
     href: "/work/terrasmart-solar",
   },
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "AI-Driven Solar Tracking Optimization",
     category: "AI + IoT",
     problem: "Standard trackers missed peak sun angles.",
@@ -417,10 +421,9 @@ export default function IoTServicesPage() {
                   key={study.title}
                   className="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-800 flex flex-col group hover:shadow-lg transition-all"
                 >
-                  <div className="h-56 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center">
-                      <Zap className="w-12 h-12 text-gray-400 dark:text-gray-500" />
-                    </div>
+                  <div className="h-56 relative overflow-hidden">
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="absolute top-4 left-4 bg-black/80 backdrop-blur text-white px-3 py-1 text-[10px] font-bold rounded uppercase tracking-wide">
                       {study.category}
                     </div>

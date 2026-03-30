@@ -1,3 +1,4 @@
+import Image from "next/image";
 // Smart Energy & Solar Solution Page - SSR
 // Strictly aligned with IoT service pages layout pattern
 
@@ -506,7 +507,8 @@ export default function SmartEnergySolarPage() {
                   className="bg-white dark:bg-surface-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 flex flex-col group"
                 >
                   <div className="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-600 group-hover:scale-105 transition-transform duration-500"></div>
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Sun className="w-12 h-12 text-white/40" />
                     </div>

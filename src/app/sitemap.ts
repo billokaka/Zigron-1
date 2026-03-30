@@ -36,6 +36,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services/engineering/structural",
     "/services/engineering/civil",
     "/services/engineering/geotechnical",
+    "/services/cybersecurity",
+    "/services/cybersecurity/iot-security",
+    "/services/cybersecurity/cloud-infrastructure",
+    "/services/cybersecurity/devsecops",
+    "/services/cybersecurity/iam",
+    "/services/cybersecurity/vapt",
   ];
 
   const solutionPages = [

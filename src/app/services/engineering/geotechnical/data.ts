@@ -75,11 +75,11 @@ export const techStack: TechCategory[] = [
     { category: "Standards & Codes", technologies: ["ASTM D2487", "FHWA GEC 15", "FHWA GEC-12", "IBC 2024", "ASCE 7-22"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "TerraSmart Solar Geotechnical", services: "Foundation Feasibility, Soil Classification", result: "20% foundation cost reduction through site-specific optimization.", href: "/work/terrasmart-solar" },
-    { title: "Highway Embankment Stability", services: "PLAXIS Modeling, Monitoring Plan", result: "On-schedule construction with real-time stability verification.", href: "/work/terrasmart-solar" },
-    { title: "Bridge Deep Foundations", services: "Acceptance Testing, FHWA Documentation", result: "Zero re-drives with documented acceptance procedures.", href: "/work/industrial-predictive" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Geotechnical", services: "Foundation Feasibility, Soil Classification", result: "20% foundation cost reduction through site-specific optimization.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80", category: "Geotechnical", title: "Highway Embankment Stability", services: "PLAXIS Modeling, Monitoring Plan", result: "On-schedule construction with real-time stability verification.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80", category: "Structural", title: "Bridge Deep Foundations", services: "Acceptance Testing, FHWA Documentation", result: "Zero re-drives with documented acceptance procedures.", href: "/work" },
 ];
 
 export interface FAQ { question: string; answer: string; }

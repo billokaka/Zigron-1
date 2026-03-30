@@ -298,6 +298,8 @@ export const crossLinks = {
 // ============================================================================
 
 export interface CaseStudy {
+    image: string;
+    category: string;
     title: string;
     services: string;
     result: string;
@@ -305,23 +307,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-    {
-        title: "Abode Smart Home Security",
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Smart Home Security",
         services: "Device Auth, OTA Safety, Security Audit",
         result: "Zero compromises across 300,000+ consumer devices.",
         href: "/work/abode-smart-home",
     },
-    {
-        title: "TerraSmart Solar Monitoring",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Monitoring",
         services: "Field Security, QA Automation",
         result: "99.9% provisioning success rate across 500+ sites.",
         href: "/work/terrasmart-solar",
     },
-    {
-        title: "Industrial Predictive Maintenance",
+    { image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80", category: "Industrial", title: "Industrial Predictive Maintenance",
         services: "OT/IT Security, Load Testing",
         result: "Passed industrial compliance audit on first submission.",
-        href: "/work/industrial-predictive",
+        href: "/work",
     },
 ];
 

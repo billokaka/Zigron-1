@@ -1,14 +1,13 @@
 import { Header, Footer } from "@/components/layout";
-import { Button, Badge, Container, Section } from "@/components/ui";
+import { Badge, Container, Section } from "@/components/ui";
 import {
   Mail,
   Phone,
-  MapPin,
   Clock,
   MessageSquare,
   Calendar,
-  ArrowRight,
 } from "lucide-react";
+import { ContactForm } from "./ContactForm";
 
 export const metadata = {
   title: "Contact Us | Zigron",
@@ -34,23 +33,8 @@ const contactMethods = [
     icon: Mail,
     title: "Email Us",
     description: "Send us an email anytime.",
-    action: "contact@zigron.com",
-    href: "mailto:contact@zigron.com",
-  },
-];
-
-const offices = [
-  {
-    city: "San Francisco",
-    country: "USA",
-    address: "100 Innovation Way, Suite 500",
-    phone: "+1 (555) 123-4567",
-  },
-  {
-    city: "London",
-    country: "UK",
-    address: "25 Tech Square, Floor 3",
-    phone: "+44 20 1234 5678",
+    action: "sales@zigron.com",
+    href: "mailto:sales@zigron.com",
   },
 ];
 
@@ -112,138 +96,12 @@ export default function ContactPage() {
                   Fill out the form and we&apos;ll get back to you within 24 hours.
                 </p>
 
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="John"
-                        className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Doe"
-                        className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                      Work Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="john@company.com"
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Company Inc."
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                      I&apos;m interested in
-                    </label>
-                    <select className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition text-gray-600 dark:text-gray-300">
-                      <option value="">Select an option...</option>
-                      <option value="iot">IoT Services</option>
-                      <option value="ai">AI & Data Services</option>
-                      <option value="engineering">Engineering Services</option>
-                      <option value="expertise">Industry Expertise</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                      Tell us about your project *
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      placeholder="Describe your project goals, timeline, and any specific requirements..."
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition resize-none"
-                    ></textarea>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                        Budget Range
-                      </label>
-                      <select className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition text-gray-600 dark:text-gray-300">
-                        <option value="">Select range...</option>
-                        <option value="25-50">$25k - $50k</option>
-                        <option value="50-100">$50k - $100k</option>
-                        <option value="100-250">$100k - $250k</option>
-                        <option value="250+">$250k+</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">
-                        Timeline
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="e.g., Q2 2024"
-                        className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-sm focus:ring-primary focus:border-primary outline-none transition"
-                      />
-                    </div>
-                  </div>
-
-                  <Button type="submit" size="lg" className="w-full justify-center">
-                    Send Message
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    By submitting, you agree to our privacy policy. We&apos;ll never share your information.
-                  </p>
-                </form>
+                <ContactForm />
               </div>
 
               {/* Info */}
               <div>
-                <h2 className="text-3xl font-bold mb-8 text-black dark:text-white">Our Offices</h2>
-
-                <div className="space-y-8 mb-12">
-                  {offices.map((office) => (
-                    <div key={office.city} className="flex gap-4">
-                      <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-black dark:text-white">
-                          {office.city}, {office.country}
-                        </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{office.address}</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{office.phone}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <h2 className="text-3xl font-bold mb-8 text-black dark:text-white">Get in Touch</h2>
 
                 <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-8 border border-gray-200 dark:border-gray-700">
                   <h3 className="font-bold text-black dark:text-white mb-4">Working Hours</h3>
@@ -254,7 +112,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
                       <Mail className="w-4 h-4 text-primary" />
-                      <span>contact@zigron.com</span>
+                      <span>sales@zigron.com</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
                       <Phone className="w-4 h-4 text-primary" />
@@ -268,8 +126,8 @@ export default function ContactPage() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                     Existing customers can reach our support team directly.
                   </p>
-                  <a href="mailto:support@zigron.com" className="text-primary font-semibold text-sm hover:underline">
-                    support@zigron.com
+                  <a href="mailto:sales@zigron.com" className="text-primary font-semibold text-sm hover:underline">
+                    sales@zigron.com
                   </a>
                 </div>
               </div>

@@ -267,6 +267,8 @@ export const techStack: TechCategory[] = [
 // ============================================================================
 
 export interface CaseStudy {
+    image: string;
+    category: string;
     title: string;
     services: string;
     result: string;
@@ -274,23 +276,20 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
-    {
-        title: "TerraSmart Solar Data Platform",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Data Platform",
         services: "Streaming Pipelines, Data Lake",
         result: "Unified telemetry from 500+ solar sites into ML-ready datasets.",
         href: "/work/terrasmart-solar",
     },
-    {
-        title: "Abode Device Analytics",
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Device Analytics",
         services: "ETL Pipelines, Feature Engineering",
         result: "300K+ device events processed daily with 99.9% data freshness.",
         href: "/work/abode-smart-home",
     },
-    {
-        title: "Industrial Predictive Maintenance",
-        services: "Sensor Data Pipelines, Quality Gates",
-        result: "Reduced data prep time by 80% for predictive ML models.",
-        href: "/work/industrial-predictive",
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Data Platform",
+        services: "Feature Engineering, ML Data Pipelines",
+        result: "+12% energy generation through data-driven AI optimization.",
+        href: "/work/terratrak-ai",
     },
 ];
 

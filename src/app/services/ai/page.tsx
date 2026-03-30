@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Header, Footer } from "@/components/layout";
 import { Button, Badge, SectionHeader, Container, Section } from "@/components/ui";
 import {
@@ -92,6 +93,7 @@ const solutions = [
 
 const caseStudies = [
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "AI-Powered Solar Tracking Optimization",
     category: "Edge AI + IoT",
     problem: "Standard sun trackers missed optimal angles, reducing energy output.",
@@ -100,20 +102,22 @@ const caseStudies = [
     href: "/work/terratrak-ai",
   },
   {
+    image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80",
     title: "Manufacturing Quality Control",
     category: "Computer Vision",
     problem: "Manual inspection missed defects and slowed production.",
     approach: "Deep learning vision system for automated defect detection.",
     outcome: "99.5% accuracy with 10x faster inspection.",
-    href: "/work/manufacturing-cv",
+    href: "/work",
   },
   {
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     title: "Intelligent Document Processing",
     category: "NLP / GenAI",
     problem: "Manual document review was slow and error-prone.",
     approach: "LLM-powered extraction with human-in-the-loop validation.",
     outcome: "80% reduction in processing time.",
-    href: "/work/document-ai",
+    href: "/work",
   },
 ];
 
@@ -402,10 +406,9 @@ export default function AIServicesPage() {
                   key={study.title}
                   className="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-800 flex flex-col group hover:shadow-lg transition-all"
                 >
-                  <div className="h-56 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-purple-300 to-purple-500 dark:from-purple-700 dark:to-purple-900 flex items-center justify-center">
-                      <Brain className="w-12 h-12 text-white/60" />
-                    </div>
+                  <div className="h-56 relative overflow-hidden">
+                    <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <div className="absolute top-4 left-4 bg-black/80 backdrop-blur text-white px-3 py-1 text-[10px] font-bold rounded uppercase tracking-wide">
                       {study.category}
                     </div>

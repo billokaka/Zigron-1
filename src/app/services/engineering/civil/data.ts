@@ -75,11 +75,11 @@ export const techStack: TechCategory[] = [
     { category: "Standards", technologies: ["AASHTO Green Book", "IBC 2024", "Local AHJ Codes", "NPDES", "SWPPP"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "TerraSmart Solar Site Civil", services: "Grading, Drainage, Earthwork Optimization", result: "50% faster civil delivery with templatized workflows.", href: "/work/terrasmart-solar" },
-    { title: "Industrial Facility Site Work", services: "Site Layout, Utility Coordination, Permitting", result: "Zero civil-related RFIs during construction.", href: "/work/industrial-predictive" },
-    { title: "Infrastructure Road Design", services: "Alignment, Grading, Drainage", result: "30% earthwork reduction through optimized profiles.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Site Civil", services: "Grading, Drainage, Earthwork Optimization", result: "50% faster civil delivery with templatized workflows.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=800&q=80", category: "Civil", title: "Industrial Facility Site Work", services: "Site Layout, Utility Coordination, Permitting", result: "Zero civil-related RFIs during construction.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=800&q=80", category: "Civil", title: "Infrastructure Road Design", services: "Alignment, Grading, Drainage", result: "30% earthwork reduction through optimized profiles.", href: "/work/terrasmart-solar" },
 ];
 
 export interface FAQ { question: string; answer: string; }

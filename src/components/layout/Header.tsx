@@ -69,6 +69,17 @@ const servicesMegaMenu = {
         { label: "Geotechnical", href: "/services/engineering/geotechnical" },
       ],
     },
+    {
+      title: "Cybersecurity",
+      titleHref: "/services/cybersecurity",
+      items: [
+        { label: "IoT Security", href: "/services/cybersecurity/iot-security" },
+        { label: "Cloud Security", href: "/services/cybersecurity/cloud-infrastructure" },
+        { label: "DevSecOps", href: "/services/cybersecurity/devsecops" },
+        { label: "IAM", href: "/services/cybersecurity/iam" },
+        { label: "Pen Testing (VAPT)", href: "/services/cybersecurity/vapt" },
+      ],
+    },
   ],
 };
 

@@ -8,7 +8,7 @@
 export const pageMetadata = {
   title: "Industries Hub | Zigron",
   description:
-    "Industry-specific IoT, AI, and engineering solutions for Energy, Manufacturing, Healthcare, Smart Home, Fleet & Logistics, and Commercial Real Estate.",
+    "Industry-specific IoT, AI, and engineering solutions for Energy, Healthcare, Smart Home, and more.",
   keywords: [
     "industrial IoT",
     "manufacturing IoT",
@@ -216,25 +216,25 @@ export interface CaseStudyPreview {
 
 export const caseStudies: CaseStudyPreview[] = [
   {
+    industry: "Smart Home",
+    title: "Abode Smart Home Platform",
+    result: "99.99% uptime & 50% infrastructure cost reduction for consumer IoT.",
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
+    href: "/work/abode-smart-home",
+  },
+  {
     industry: "Energy",
-    title: "Predictive Maintenance for Offshore Rigs",
-    result: "Saved $2M/year in reduced downtime using vibration sensor analysis.",
-    image: "/images/case-studies/energy-offshore.jpg",
-    href: "/work/offshore-predictive-maintenance",
+    title: "TerraSmart Solar Monitoring",
+    result: "30% faster field deployment speed across 500+ solar installations.",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+    href: "/work/terrasmart-solar",
   },
   {
-    industry: "Healthcare",
-    title: "Remote Cardiac Monitoring Platform",
-    result: "HIPAA-compliant cloud architecture handling 50k+ daily patients.",
-    image: "/images/case-studies/healthcare-cardiac.jpg",
-    href: "/work/cardiac-monitoring",
-  },
-  {
-    industry: "Logistics",
-    title: "Cold Chain Logistics Tracker",
-    result: "Real-time temperature monitoring for pharmaceutical transport.",
-    image: "/images/case-studies/logistics-cold-chain.jpg",
-    href: "/work/cold-chain-tracker",
+    industry: "AI + IoT",
+    title: "TerraTrak AI Optimization",
+    result: "+12% energy generation boost through AI-driven solar tracking.",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+    href: "/work/terratrak-ai",
   },
 ];
 

@@ -32,13 +32,13 @@ export const solutions: Solution[] = [
     { iconName: "database", title: "Fleet Data Unification", description: "Normalized ingestion from multiple telematics vendors into a single operational view.", href: "/services/ai/data-engineering" },
     { iconName: "barChart", title: "Dashboards & Exception Workflows", description: "Real-time fleet dashboards with exception alerts and dispatch integration.", href: "/services/ai/analytics" },
     { iconName: "target", title: "Predictive Maintenance", description: "Vehicle health scoring and failure prediction to prevent roadside breakdowns.", href: "/solutions/predictive-maintenance" },
-    { iconName: "navigation", title: "Route & Dispatch Integration", description: "Integration with TMS/dispatch systems for optimized routing and load management.", href: "/solutions/fleet-logistics" },
-    { iconName: "mapPin", title: "Utilization Analytics", description: "Asset utilization, idle time, and fuel efficiency tracking across the fleet.", href: "/solutions/fleet-logistics" },
+    { iconName: "navigation", title: "Route & Dispatch Integration", description: "Integration with TMS/dispatch systems for optimized routing and load management.", href: "/services/iot/platform-cloud" },
+    { iconName: "mapPin", title: "Utilization Analytics", description: "Asset utilization, idle time, and fuel efficiency tracking across the fleet.", href: "/services/ai/analytics" },
 ];
 
 export interface RecommendedSolution { title: string; description: string; bestFor: string; outcome: string; href: string; }
 export const recommendedSolutions: RecommendedSolution[] = [
-    { title: "Fleet & Logistics", description: "Comprehensive fleet telematics platform with visibility, compliance, and efficiency tools.", bestFor: "Fleet operators (50+ vehicles)", outcome: "25% fuel savings, 40% fewer breakdowns", href: "/solutions/fleet-logistics" },
+    { title: "Predictive Maintenance", description: "Telemetry-driven failure prediction and maintenance prioritization for fleet vehicles.", bestFor: "Fleet operators (50+ vehicles)", outcome: "40% downtime reduction, 3x ROI", href: "/solutions/predictive-maintenance" },
     { title: "Predictive Maintenance", description: "Vehicle health monitoring and failure prediction for reduced downtime.", bestFor: "Fleets with mixed vehicle types", outcome: "30%+ maintenance cost reduction", href: "/solutions/predictive-maintenance" },
 ];
 
@@ -59,8 +59,8 @@ export const securityFeatures: SecurityFeature[] = [
 
 export interface CaseStudy { image: string; category: string; title: string; challenge: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { image: "/images/case-studies/fleet-telematics.jpg", category: "Fleet Platform", title: "Regional Fleet Telematics Platform", challenge: "Fragmented data across 4 telematics vendors for 500+ vehicles.", result: "Unified view with 25% fuel savings and 40% fewer breakdowns.", href: "/work" },
-    { image: "/images/case-studies/delivery-optimization.jpg", category: "Route Optimization", title: "Last-Mile Delivery Optimization", challenge: "Manual route planning causing late deliveries and excess fuel costs.", result: "18% route efficiency improvement with real-time exception handling.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Fleet Monitoring", challenge: "Monitoring distributed solar assets across hundreds of field sites.", result: "30% faster field deployment with real-time fleet visibility.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Asset Optimization", challenge: "Maximizing asset performance with predictive intelligence.", result: "+12% energy generation through AI-driven optimization.", href: "/work/terratrak-ai" },
 ];
 
 export interface ImplementationPattern { number: number; title: string; description: string; features: string[]; featured: boolean; }

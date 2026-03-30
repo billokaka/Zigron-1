@@ -39,7 +39,7 @@ export const solutions: Solution[] = [
 export interface RecommendedSolution { title: string; description: string; bestFor: string; outcome: string; href: string; }
 export const recommendedSolutions: RecommendedSolution[] = [
     { title: "Predictive Maintenance", description: "Telemetry-driven failure prediction with CMMS integration for automated work orders.", bestFor: "Plants with rotating equipment", outcome: "40% downtime reduction, 3x ROI", href: "/solutions/predictive-maintenance" },
-    { title: "Fleet & Logistics", description: "Telematics and utilization tracking for mobile equipment and material handling.", bestFor: "Plants with mobile assets", outcome: "20% fuel savings, improved utilization", href: "/solutions/fleet-logistics" },
+    { title: "Smart Energy & Solar", description: "IoT-driven energy monitoring and optimization for manufacturing facilities.", bestFor: "Plants with high energy costs", outcome: "+12% energy efficiency improvement", href: "/solutions/smart-energy-solar" },
 ];
 
 export interface ServiceCategory { iconName: IconName; title: string; services: string[]; }
@@ -59,8 +59,8 @@ export const securityFeatures: SecurityFeature[] = [
 
 export interface CaseStudy { image: string; category: string; title: string; challenge: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { image: "/images/case-studies/manufacturing-motors.jpg", category: "Predictive", title: "Motor Failure Prediction System", challenge: "Unplanned motor failures causing production line stops.", result: "45% downtime reduction, 3.2x ROI in Year 1.", href: "/work" },
-    { image: "/images/case-studies/manufacturing-oee.jpg", category: "Analytics", title: "OEE Analytics Platform", challenge: "No visibility into true OEE across production lines.", result: "Real-time OEE tracking with 12% improvement.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Industrial Monitoring", challenge: "Monitoring distributed industrial assets across hundreds of sites.", result: "30% faster field deployment with real-time asset visibility.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Predictive Optimization", challenge: "Maximizing equipment performance through data-driven insights.", result: "+12% energy generation boost via AI-driven optimization.", href: "/work/terratrak-ai" },
 ];
 
 export interface ImplementationPattern { number: number; title: string; description: string; features: string[]; featured: boolean; }

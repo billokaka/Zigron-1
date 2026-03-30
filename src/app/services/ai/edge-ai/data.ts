@@ -75,11 +75,11 @@ export const techStack: TechCategory[] = [
     { category: "Profiling & Ops", technologies: ["NVIDIA Nsight", "PyTorch Profiler", "Weights & Biases", "MLflow", "Docker", "Kubernetes"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "Solar Tracker Edge AI", services: "Model Quantization, Edge Deployment", result: "ML models running on-device at solar sites with 4x faster inference.", href: "/work/terratrak-ai" },
-    { title: "Industrial Vision Optimization", services: "TensorRT, Pruning, Serving Optimization", result: "65% cost reduction while maintaining 99.2% detection accuracy.", href: "/work/industrial-predictive" },
-    { title: "Smart Home On-Device AI", services: "TinyML, On-Device Inference", result: "Privacy-preserving AI running locally on smart home gateway devices.", href: "/work/abode-smart-home" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "Solar Tracker Edge AI", services: "Model Quantization, Edge Deployment", result: "ML models running on-device at solar sites with 4x faster inference.", href: "/work/terratrak-ai" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar Edge Deployment", services: "Model Optimization, Edge Inference", result: "30% faster field deployment with optimized on-device models.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Smart Home On-Device AI", services: "TinyML, On-Device Inference", result: "Privacy-preserving AI running locally on smart home gateway devices.", href: "/work/abode-smart-home" },
 ];
 
 export interface FAQ { question: string; answer: string; }

@@ -93,11 +93,11 @@ export const techStack: TechCategory[] = [
     { category: "Edge & Integration", technologies: ["Edge AI Runtime", "SAP PM", "Maximo", "ServiceNow", "REST APIs"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "TerraTrak AI Solar Tracking", services: "Anomaly Detection, Telemetry Analytics", result: "90% early detection of tracker failures.", href: "/work" },
-    { title: "Manufacturing Plant Reliability", services: "Vibration Analysis, CMMS Integration", result: "45% downtime reduction in first year.", href: "/work" },
-    { title: "Heavy Equipment Fleet Health", services: "Hydraulic Monitoring, Risk Scoring", result: "Fleet availability increased to 94%.", href: "/work" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "AI + IoT", title: "TerraTrak AI Predictive Tracking", services: "Anomaly Detection, Telemetry Analytics", result: "+12% energy generation through predictive optimization.", href: "/work/terratrak-ai" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Industrial IoT", title: "TerraSmart Solar Asset Monitoring", services: "Condition Monitoring, Field Deployment", result: "30% faster field deployment with predictive insights.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Consumer IoT", title: "Abode Smart Home Reliability", services: "Device Health Monitoring, Uptime Optimization", result: "99.99% uptime & 50% infrastructure cost reduction.", href: "/work/abode-smart-home" },
 ];
 
 export interface FAQ { question: string; answer: string; }

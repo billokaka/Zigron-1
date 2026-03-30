@@ -273,6 +273,7 @@ export const differentiators: Differentiator[] = [
 // ============================================================================
 
 export interface SampleProject {
+  image: string;
   title: string;
   scope: string;
   deliverables: string;
@@ -281,18 +282,21 @@ export interface SampleProject {
 
 export const sampleProjects: SampleProject[] = [
   {
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "500MW Solar Farm Permit Set",
     scope: "Full construction document package for utility-scale solar installation.",
     deliverables: "180 sheets including civil, structural, and electrical drawings.",
     turnaround: "6 weeks from kickoff to IFC release.",
   },
   {
+    image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80",
     title: "Manufacturing Facility Expansion",
     scope: "Equipment layout and structural modifications for production line addition.",
     deliverables: "3D model, shop drawings, and as-built documentation.",
     turnaround: "4 weeks for design, ongoing as-builts during construction.",
   },
   {
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
     title: "Multi-Site Retail Rollout",
     scope: "Standardized design package adapted for 50+ locations.",
     deliverables: "Template drawings with site-specific customization per location.",

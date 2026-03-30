@@ -75,11 +75,11 @@ export const techStack: TechCategory[] = [
     { category: "Monitoring & Ops", technologies: ["Evidently AI", "Great Expectations", "Prometheus", "Grafana", "Datadog", "PagerDuty"] },
 ];
 
-export interface CaseStudy { title: string; services: string; result: string; href: string; }
+export interface CaseStudy { image: string; category: string; title: string; services: string; result: string; href: string; }
 export const caseStudies: CaseStudy[] = [
-    { title: "AI Solar Tracking Optimization", services: "ML Pipeline, Model Registry, Edge Deployment", result: "Automated retraining pipeline with zero-downtime model updates.", href: "/work/terratrak-ai" },
-    { title: "Predictive Maintenance Platform", services: "MLOps Pipeline, Monitoring, Drift Detection", result: "Models retrained automatically when drift detected, 40% less downtime.", href: "/work/industrial-predictive" },
-    { title: "Document AI Processing", services: "Model Serving, A/B Testing, Quality Gates", result: "3x faster model iteration with regression-proof deployments.", href: "/work/document-ai" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "AI Solar Tracking Optimization", services: "ML Pipeline, Model Registry, Edge Deployment", result: "Automated retraining pipeline with zero-downtime model updates.", href: "/work/terratrak-ai" },
+    { image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80", category: "Solar", title: "TerraSmart Solar MLOps Pipeline", services: "Automated Retraining, Monitoring, Drift Detection", result: "30% faster deployment with continuous model updates across sites.", href: "/work/terrasmart-solar" },
+    { image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80", category: "Smart Home", title: "Abode Smart Home Model Ops", services: "Model Serving, Quality Gates, A/B Testing", result: "99.99% uptime with automated model lifecycle management.", href: "/work/abode-smart-home" },
 ];
 
 export interface FAQ { question: string; answer: string; }
