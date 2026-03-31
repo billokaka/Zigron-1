@@ -334,28 +334,28 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
-        category: "Web App",
-        title: "FinTech Platform Pen Test",
-        services: "Web App & API Testing",
-        result: "15 critical findings fixed pre-launch.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800\&q=80",
+        category: "Consumer IoT",
+        title: "Scaling Abode's Smart Security to Millions",
+        services: "Serverless AWS, Firmware Optimization",
+        result: "99.99% uptime \& 50% infrastructure cost reduction.",
+        href: "/work/abode-smart-home"
     },
     {
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
-        category: "Red Team",
-        title: "Enterprise Red Team Exercise",
-        services: "Adversary Simulation",
-        result: "Domain admin in 4 hours, SOC detected in 6.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "Industrial IoT",
+        title: "Automating TerraSmart Solar Installation",
+        services: "GPS Rovers, Mobile App, Field Deployment",
+        result: "30% faster field deployment speed.",
+        href: "/work/terrasmart-solar"
     },
     {
-        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
-        category: "IoT",
-        title: "Medical Device Pen Test",
-        services: "Firmware & Hardware Testing",
-        result: "ETSI EN 303 645 certified.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "AI + IoT",
+        title: "AI-Driven Solar Tracking Optimization",
+        services: "Machine Learning, Edge AI, Energy",
+        result: "+12% energy generation boost.",
+        href: "/work/terratrak-ai"
     }
 ];
 

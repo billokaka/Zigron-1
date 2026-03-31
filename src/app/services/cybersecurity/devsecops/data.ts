@@ -334,28 +334,28 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
-        category: "DevSecOps",
-        title: "SaaS Platform Pipeline Security",
-        services: "SAST/DAST & Policy Gates",
-        result: "Zero critical vulns escaping to production.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800\&q=80",
+        category: "Consumer IoT",
+        title: "Scaling Abode's Smart Security to Millions",
+        services: "Serverless AWS, Firmware Optimization",
+        result: "99.99% uptime \& 50% infrastructure cost reduction.",
+        href: "/work/abode-smart-home"
     },
     {
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
-        category: "ML Security",
-        title: "AI Training Pipeline Integrity",
-        services: "SLSA Provenance & Signing",
-        result: "Full model lineage and audit trail.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "Industrial IoT",
+        title: "Automating TerraSmart Solar Installation",
+        services: "GPS Rovers, Mobile App, Field Deployment",
+        result: "30% faster field deployment speed.",
+        href: "/work/terrasmart-solar"
     },
     {
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
-        category: "Compliance",
-        title: "Automated SOC 2 Evidence",
-        services: "Policy-as-Code & SBOM",
-        result: "SOC 2 Type II with zero manual evidence.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "AI + IoT",
+        title: "AI-Driven Solar Tracking Optimization",
+        services: "Machine Learning, Edge AI, Energy",
+        result: "+12% energy generation boost.",
+        href: "/work/terratrak-ai"
     }
 ];
 

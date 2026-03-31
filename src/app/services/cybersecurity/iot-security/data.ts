@@ -334,28 +334,28 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-        category: "Medical IoT",
-        title: "Surgical Robot Security",
-        services: "Secure Boot & FDA Compliance",
-        result: "FDA 510(k) cleared, zero critical findings.",
-        href: "/work"
-    },
-    {
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
-        category: "Industrial",
-        title: "Smart Grid Controller Hardening",
-        services: "Firmware Hardening & OTA",
-        result: "IEC 62443 SL2 certified in 8 weeks.",
-        href: "/work"
-    },
-    {
-        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800\&q=80",
         category: "Consumer IoT",
-        title: "Smart Lock Fleet Security",
-        services: "Device Identity & PKI",
-        result: "2M devices secured with per-device keys.",
-        href: "/work"
+        title: "Scaling Abode's Smart Security to Millions",
+        services: "Serverless AWS, Firmware Optimization",
+        result: "99.99% uptime \& 50% infrastructure cost reduction.",
+        href: "/work/abode-smart-home"
+    },
+    {
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "Industrial IoT",
+        title: "Automating TerraSmart Solar Installation",
+        services: "GPS Rovers, Mobile App, Field Deployment",
+        result: "30% faster field deployment speed.",
+        href: "/work/terrasmart-solar"
+    },
+    {
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "AI + IoT",
+        title: "AI-Driven Solar Tracking Optimization",
+        services: "Machine Learning, Edge AI, Energy",
+        result: "+12% energy generation boost.",
+        href: "/work/terratrak-ai"
     }
 ];
 

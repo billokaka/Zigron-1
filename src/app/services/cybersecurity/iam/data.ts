@@ -334,28 +334,28 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
-        image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80",
-        category: "Enterprise",
-        title: "Global Workforce SSO",
-        services: "Okta SSO & FIDO2 MFA",
-        result: "3,000 users, 99.9% MFA adoption.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800\&q=80",
+        category: "Consumer IoT",
+        title: "Scaling Abode's Smart Security to Millions",
+        services: "Serverless AWS, Firmware Optimization",
+        result: "99.99% uptime \& 50% infrastructure cost reduction.",
+        href: "/work/abode-smart-home"
     },
     {
-        image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
-        category: "IoT",
-        title: "Smart Meter Device Identity",
-        services: "SPIFFE & X.509 PKI",
-        result: "500K devices with individual identity.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "Industrial IoT",
+        title: "Automating TerraSmart Solar Installation",
+        services: "GPS Rovers, Mobile App, Field Deployment",
+        result: "30% faster field deployment speed.",
+        href: "/work/terrasmart-solar"
     },
     {
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        category: "Platform",
-        title: "Partner API Gateway",
-        services: "OAuth 2.0 & Rate Limiting",
-        result: "50+ partners, zero unauthorized access.",
-        href: "/work"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800\&q=80",
+        category: "AI + IoT",
+        title: "AI-Driven Solar Tracking Optimization",
+        services: "Machine Learning, Edge AI, Energy",
+        result: "+12% energy generation boost.",
+        href: "/work/terratrak-ai"
     }
 ];
 
