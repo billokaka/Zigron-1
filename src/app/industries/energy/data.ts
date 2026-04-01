@@ -473,39 +473,39 @@ export interface Solution {
 
 export const solutions: Solution[] = [
   {
-    iconName: "zap",
-    title: "Advanced Metering (AMI)",
+    iconName: "sun",
+    title: "Smart Energy & Solar",
     description:
-      "Secure firmware and connectivity modules for next-gen smart meters and aggregators.",
-    href: "/solutions/smart-metering",
+      "Real-time monitoring and optimization of solar arrays and renewable assets.",
+    href: "/solutions/smart-energy-solar",
   },
   {
-    iconName: "sun",
-    title: "Renewable Asset Management",
+    iconName: "zap",
+    title: "Predictive Maintenance",
     description:
-      "Centralized platforms to monitor performance of solar arrays, wind farms, and battery storage.",
-    href: "/solutions/renewable-asset-management",
+      "Predict equipment failures using telemetry, patterns, and reliability workflows.",
+    href: "/solutions/predictive-maintenance",
   },
   {
     iconName: "cpu",
-    title: "Grid Edge Intelligence",
+    title: "IoT Platform & Cloud",
     description:
-      "Edge computing solutions that process data locally for real-time load balancing and fault detection.",
-    href: "/solutions/grid-edge",
+      "Scalable cloud platforms for device management, telemetry, and fleet operations.",
+    href: "/services/iot/platform-cloud",
   },
   {
     iconName: "barChart",
-    title: "Predictive Analytics Dashboards",
+    title: "IoT Data & Analytics",
     description:
-      "Custom BI tools integrating weather data, usage patterns, and asset health for better forecasting.",
-    href: "/solutions/energy-analytics",
+      "Turn raw sensor data into business insights with dashboards and anomaly detection.",
+    href: "/services/iot/data-analytics",
   },
   {
-    iconName: "battery",
-    title: "Energy Storage Systems (BESS)",
+    iconName: "shield",
+    title: "IoT Security",
     description:
-      "Control software and battery management system (BMS) integration for grid stability.",
-    href: "/solutions/energy-storage",
+      "Secure firmware, device identity, and encrypted communication for energy assets.",
+    href: "/services/cybersecurity/iot-security",
   },
 ];
 

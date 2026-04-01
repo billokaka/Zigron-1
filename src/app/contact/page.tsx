@@ -2,7 +2,6 @@ import { Header, Footer } from "@/components/layout";
 import { Badge, Container, Section } from "@/components/ui";
 import {
   Mail,
-  Phone,
   Clock,
   MessageSquare,
   Calendar,
@@ -113,10 +112,6 @@ export default function ContactPage() {
                     <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
                       <Mail className="w-4 h-4 text-primary" />
                       <span>sales@zigron.com</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <span>+1 (555) 123-4567</span>
                     </div>
                   </div>
                 </div>

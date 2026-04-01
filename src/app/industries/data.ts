@@ -110,7 +110,7 @@ export const industries: Industry[] = [
       "Secure Patient Data Pipelines",
     ],
     relatedSolutions: ["MedTech", "HIPAA Compliance"],
-    caseStudy: { title: "Medical IoT Platform", result: "ISO 27001 certified" },
+    caseStudy: { title: "Abode Smart Security", result: "99.99% uptime & HIPAA-ready architecture" },
   },
   {
     iconName: "home",
@@ -125,20 +125,6 @@ export const industries: Industry[] = [
     ],
     relatedSolutions: ["Consumer IoT", "Home Automation"],
     caseStudy: { title: "Abode Security", result: "99.99% uptime achieved" },
-  },
-  {
-    iconName: "building2",
-    title: "Commercial Real Estate",
-    slug: "commercial-real-estate",
-    shortDescription: "Smart building solutions for energy management and occupancy analytics.",
-    category: "Operational Efficiency",
-    capabilities: [
-      "Building Management Systems",
-      "Energy Optimization",
-      "Occupancy Analytics",
-    ],
-    relatedSolutions: ["Smart Buildings", "HVAC Automation"],
-    caseStudy: { title: "Smart Building", result: "25% energy reduction" },
   },
 ];
 

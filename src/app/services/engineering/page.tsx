@@ -241,39 +241,6 @@ export default function EngineeringServicesPage() {
           </Container>
         </Section>
 
-        {/* Trust Strip */}
-        <div className="bg-surface-light dark:bg-surface-dark border-y border-gray-200 dark:border-gray-800 py-8">
-          <Container>
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="w-full lg:w-1/2 text-center lg:text-left">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
-                  Trusted by developers, EPCs, and OEMs
-                </p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 items-center">
-                  <span className="text-xl font-extrabold text-gray-400 dark:text-gray-500 tracking-tight">AECOM</span>
-                  <span className="text-xl font-extrabold text-gray-400 dark:text-gray-500 font-serif italic">Bechtel</span>
-                  <span className="text-xl font-extrabold text-gray-400 dark:text-gray-500 font-mono">Fluor</span>
-                  <span className="text-xl font-extrabold text-gray-400 dark:text-gray-500">Jacobs</span>
-                </div>
-              </div>
-
-              <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center gap-8 lg:gap-12 border-t lg:border-t-0 lg:border-l border-gray-200 dark:border-gray-700 pt-6 lg:pt-0 lg:pl-12">
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-black dark:text-white tracking-tight">500+</p>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-wide font-semibold mt-1">Projects Completed</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-black dark:text-white tracking-tight">30+</p>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-wide font-semibold mt-1">PE States</p>
-                </div>
-                <div className="text-center hidden sm:flex flex-col gap-2">
-                  <span className="text-[10px] font-bold bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 px-3 py-1 rounded-full text-gray-600 dark:text-gray-300">ISO 9001</span>
-                  <span className="text-[10px] font-bold bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 px-3 py-1 rounded-full text-gray-600 dark:text-gray-300">AISC Certified</span>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </div>
 
         {/* Services Grid */}
         <Section>

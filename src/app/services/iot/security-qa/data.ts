@@ -286,7 +286,7 @@ export const crossLinks = {
     industries: [
         { title: "Healthcare", href: "/industries/healthcare" },
         { title: "Energy & Utilities", href: "/industries/energy" },
-        { title: "Consumer Electronics", href: "/industries/consumer" },
+        { title: "Consumer Electronics", href: "/industries/smart-home" },
     ],
     work: [
         { title: "Abode Smart Home Security", href: "/work/abode-smart-home" },

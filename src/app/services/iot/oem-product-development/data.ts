@@ -354,7 +354,7 @@ export const crossLinks = {
     { title: "Security & QA", href: "/services/iot/security-qa" },
   ],
   industries: [
-    { title: "Consumer Electronics", href: "/industries/consumer" },
+    { title: "Consumer Electronics", href: "/industries/smart-home" },
     { title: "Manufacturing", href: "/industries/manufacturing" },
     { title: "Energy", href: "/industries/energy" },
   ],
