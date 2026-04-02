@@ -52,6 +52,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/wp-content/uploads/:path*",
+        destination: "https://cms.zigron.com/wp-content/uploads/:path*",
+      },
+    ];
+  },
   async headers() {
     return [
       {
